@@ -2,7 +2,7 @@ package dao;
 
 import models.PlanoTreino;
 
-public class PlanoTreinoDAO {
+public class PlanoTreinoDAO implements OperacaoBD {
 	private BD bd;
 	private PlanoTreino planoTreino;
 	
@@ -21,6 +21,18 @@ public class PlanoTreinoDAO {
 
 	public void setPlanoTreino(PlanoTreino planoTreino) {
 		this.planoTreino = planoTreino;
+	}
+
+	@Override
+	public boolean localizar() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String atualizar(TipoOperacaoBD operacao) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

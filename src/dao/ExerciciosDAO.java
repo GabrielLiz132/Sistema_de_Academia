@@ -2,7 +2,7 @@ package dao;
 
 import models.Exercicios;
 
-public class ExerciciosDAO {
+public class ExerciciosDAO implements OperacaoBD {
 	private BD bd;
 	private Exercicios exercicios;
 
@@ -21,6 +21,18 @@ public class ExerciciosDAO {
 
 	public void setExercicios(Exercicios exercicios) {
 		this.exercicios = exercicios;
+	}
+
+	@Override
+	public boolean localizar() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String atualizar(TipoOperacaoBD operacao) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
