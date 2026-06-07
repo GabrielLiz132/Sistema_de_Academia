@@ -2,10 +2,9 @@ package models;
 
 public class BicepsRoscaComHalter extends ExercicioComRepeticao {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public BicepsRoscaComHalter() {
+		super(0.09f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

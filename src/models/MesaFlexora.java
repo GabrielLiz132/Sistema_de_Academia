@@ -2,10 +2,9 @@ package models;
 
 public class MesaFlexora extends ExercicioComRepeticao{
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public MesaFlexora() {
+		super(0.13f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

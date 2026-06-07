@@ -2,10 +2,9 @@ package models;
 
 public class Stiff extends ExercicioComRepeticao {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public Stiff() {
+		super(0.13f);
+		// TODO Auto-generated constructor stub
 	}
-
+	
 }

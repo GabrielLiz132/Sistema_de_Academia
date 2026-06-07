@@ -1,11 +1,10 @@
 package models;
 
-public class Esteira extends ExercicioSemRepeticao {
+public class Esteira extends ExercicioComTempo {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public Esteira() {
+		super(0.07f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

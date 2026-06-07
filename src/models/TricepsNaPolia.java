@@ -2,10 +2,9 @@ package models;
 
 public class TricepsNaPolia extends ExercicioComRepeticao {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public TricepsNaPolia() {
+		super(0.1f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

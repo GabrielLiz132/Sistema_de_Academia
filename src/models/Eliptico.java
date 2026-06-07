@@ -1,11 +1,10 @@
 package models;
 
-public class Eliptico extends ExercicioSemRepeticao{
+public class Eliptico extends ExercicioComTempo{
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public Eliptico() {
+		super(0.08f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

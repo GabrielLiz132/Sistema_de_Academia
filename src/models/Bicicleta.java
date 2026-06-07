@@ -1,11 +1,10 @@
 package models;
 
-public class Bicicleta extends ExercicioSemRepeticao{
+public class Bicicleta extends ExercicioComTempo{
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public Bicicleta() {
+		super(0.07f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

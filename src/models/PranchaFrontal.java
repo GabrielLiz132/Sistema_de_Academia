@@ -1,10 +1,10 @@
 package models;
 
-public class PranchaFrontal extends ExercicioSemRepeticao{
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+public class PranchaFrontal extends ExercicioComTempo{
+
+	public PranchaFrontal() {
+		super(0.05f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

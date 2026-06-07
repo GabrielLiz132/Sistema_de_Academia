@@ -15,7 +15,7 @@ public class BD {
 	public BD() {
 		this.host = "localhost";
 		this.port = 3306;
-		this.dbName = "ecommerce";
+		this.dbName = "SistemaDeAcademia";
 		this.login = "root";
 		this.senha = "";
 		this.connection = null;

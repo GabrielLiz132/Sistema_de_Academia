@@ -2,10 +2,9 @@ package models;
 
 public class AgachamentoLivre extends ExercicioComRepeticao{
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public AgachamentoLivre() {
+		super(0.14f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

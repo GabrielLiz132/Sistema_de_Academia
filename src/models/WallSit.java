@@ -1,11 +1,9 @@
 package models;
 
-public class WallSit extends ExercicioSemRepeticao {
-
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+public class WallSit extends ExercicioComTempo{
+	
+	public WallSit() {
+		super(0.05f);
 	}
-
+	
 }

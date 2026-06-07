@@ -2,10 +2,9 @@ package models;
 
 public class ElevacaoPelvica extends ExercicioComRepeticao {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public ElevacaoPelvica() {
+		super(0.11f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

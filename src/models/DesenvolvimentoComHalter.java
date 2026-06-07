@@ -2,10 +2,9 @@ package models;
 
 public class DesenvolvimentoComHalter extends ExercicioComRepeticao {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public DesenvolvimentoComHalter() {
+		super(0.11f);
+		// TODO Auto-generated constructor stub
 	}
 
 }
