@@ -5,6 +5,7 @@ public abstract class FormaPagamento {
     private String descricao;
  
     public FormaPagamento() {
+        this.descricao = null;
     }
  
     public String getDescricao() {

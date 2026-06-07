@@ -3,15 +3,15 @@ package models;
 public class Dinheiro extends FormaPagamento {
 	 
     public Dinheiro() {
+        super();
+        setDescricao("Dinheiro");
     }
  
-    public double darTroco() {
-        // Falta implementar lógica de troco
-        return 0;
+    public double darTroco(float valorPago, float valorCompra) {
+        return valorPago - valorCompra;
     }
  
     public boolean pagar() {
-        // Falta implementar lógica de pagamento em dinheiro
-        return false;
+        return true;
     }
 }

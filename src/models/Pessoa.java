@@ -3,13 +3,16 @@ package models;
 import java.util.Date;
 
 public abstract class Pessoa {
- 
     private String nome;
     private String cpf;
     private Date dataNascimento;
     private int numeroTelefone;
  
     public Pessoa() {
+        this.nome = null;
+        this.cpf = null;
+        this.dataNascimento = null;
+        this.numeroTelefone = 0;
     }
  
     public String getNome() {
@@ -36,11 +39,11 @@ public abstract class Pessoa {
         this.dataNascimento = dataNascimento;
     }
  
-    public int getNumeroTelefone() {
+    public long getNumeroTelefone() {
         return numeroTelefone;
     }
  
-    public void setNumeroTelefone(int numeroTelefone) {
-        this.numeroTelefone = numeroTelefone;
+    public void setNumeroTelefone(int i) {
+        this.numeroTelefone = i;
     }
 }
