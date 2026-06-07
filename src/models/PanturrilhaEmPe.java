@@ -2,10 +2,9 @@ package models;
 
 public class PanturrilhaEmPe extends ExercicioComRepeticao {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public PanturrilhaEmPe() {
+		super(0.08f);
+		// TODO Auto-generated constructor stub
 	}
-	
+
 }

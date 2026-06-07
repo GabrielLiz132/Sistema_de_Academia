@@ -2,10 +2,9 @@ package models;
 
 public class LegPress45 extends ExercicioComRepeticao {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public LegPress45() {
+		super(0.18f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

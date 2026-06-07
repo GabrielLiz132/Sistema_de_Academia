@@ -2,10 +2,9 @@ package models;
 
 public class AbdominalArticulado extends ExercicioComRepeticao {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public AbdominalArticulado() {
+		super(0.10f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

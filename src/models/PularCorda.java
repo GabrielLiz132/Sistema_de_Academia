@@ -1,11 +1,10 @@
 package models;
 
-public class PularCorda extends ExercicioSemRepeticao {
+public class PularCorda extends ExercicioComTempo {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public PularCorda() {
+		super(0.04f);
+		// TODO Auto-generated constructor stub
 	}
-	
+
 }

@@ -2,10 +2,9 @@ package models;
 
 public class SupinoInclinado extends ExercicioComRepeticao {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public SupinoInclinado() {
+		super(0.12f);
+		// TODO Auto-generated constructor stub
 	}
 
 }

@@ -10,13 +10,14 @@ import java.util.Date;
 	    private Exercicios[] exercicios;
 	    private int[] quantidadeExercicios;
 
-	    public PlanoTreino() {
-	    	this.aluno = null;
-	    	this.professorResponsavel = null;
-	    	this.dataDeCriacao = null;
-	    	this.exercicios = null;
-	    	this.quantidadeExercicios = null;
+	    public PlanoTreino(Aluno aluno, Professor professorResponsavel, Date dataDeCriacao, Exercicios[] exercicios, int[] quantidadeExercicios) {
+	        this.aluno = aluno;
+	        this.professorResponsavel = professorResponsavel;
+	        this.dataDeCriacao = dataDeCriacao;
+	        this.exercicios = exercicios;
+	        this.quantidadeExercicios = quantidadeExercicios;
 	    }
+
 
 	    public Aluno getAluno() {
 			return aluno;
@@ -59,6 +60,10 @@ import java.util.Date;
 		}
 
 		public float calcularValorTotal() {
-			return 0.0f;
+			  float total = 0;
+		        for (int i = 0; i < exercicios.length; i++) {
+		            total += exercicios[i].getValorUnitario() * quantidadeExercicios[i];
+		        }
+		        return total;
 	    }
 	}

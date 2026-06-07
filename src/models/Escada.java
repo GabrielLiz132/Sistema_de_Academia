@@ -1,11 +1,10 @@
 package models;
 
-public class Escada extends ExercicioSemRepeticao {
+public class Escada extends ExercicioComTempo {
 
-	@Override
-	public float calculaValorExercicios() {
-		// TODO Auto-generated method stub
-		return 0;
+	public Escada() {
+		super(0.06f);
+		// TODO Auto-generated constructor stub
 	}
 
 }
