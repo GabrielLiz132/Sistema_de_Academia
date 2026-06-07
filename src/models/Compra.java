@@ -6,10 +6,15 @@ public class Compra {
     private Pagamento pagamento;
  
     public Compra() {
+    	planoTreino = null;
+    	pagamento = null;
     }
  
     public PlanoTreino[] getPlanoTreino() {
         return planoTreino;
+    }
+    public void setPlanoTreino(PlanoTreino[] planoTreino) {
+        this.planoTreino = planoTreino;
     }
  
     public Pagamento getPagamento() {
@@ -21,7 +26,11 @@ public class Compra {
     }
  
     public float SomaTotal(PlanoTreino[] planoTreino) {
-        //Falta implementar soma total dos planos de treino
-        return 0;
+    	if (planoTreino == null || pagamento == null) return 0;
+    	float somaTotal = 0.0f;
+    	for (PlanoTreino pt: planoTreino) {
+    		somaTotal += pt.calcularValorTotal();
+    	}
+        return somaTotal;
     }
 }
