@@ -4,6 +4,8 @@ public class Pagamento {
 	 
     private FormaPagamento[] formaPagamento;
     private float valor;
+    private int id;
+
  
     public Pagamento() {
     }
@@ -20,7 +22,15 @@ public class Pagamento {
         return valor;
     }
  
-    public void setValor(float valor) {
+    public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setValor(float valor) {
         this.valor = valor;
     }
     
