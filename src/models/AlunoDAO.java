@@ -18,7 +18,7 @@ public class AlunoDAO implements OperacaoBD {
     }
  
 
-    public void setBD(BD bd) {
+    public void setBd(BD bd) {
         this.bd = bd;
     }
  
