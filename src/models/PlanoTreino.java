@@ -4,6 +4,7 @@ import java.util.Date;
 
 	public class PlanoTreino {
 
+		private int idPlanoTreino;
 		private Aluno aluno; 
 	    private Professor professorResponsavel;
 	    private Date dataDeCriacao;
@@ -17,7 +18,14 @@ import java.util.Date;
 	        this.exercicios = exercicios;
 	        this.quantidadeExercicios = quantidadeExercicios;
 	    }
+	    
+		public int getIdPlanoTreino() {
+			return idPlanoTreino;
+		}
 
+		public void setIdPlanoTreino(int idPlanoTreino) {
+			this.idPlanoTreino = idPlanoTreino;
+		}
 
 	    public Aluno getAluno() {
 			return aluno;

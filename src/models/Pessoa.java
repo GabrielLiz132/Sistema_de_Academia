@@ -7,7 +7,7 @@ public abstract class Pessoa {
     private String nome;
     private String cpf;
     private Date dataNascimento;
-    private int numeroTelefone;
+    private String numeroTelefone;
  
     public Pessoa() {
     }
@@ -36,11 +36,11 @@ public abstract class Pessoa {
         this.dataNascimento = dataNascimento;
     }
  
-    public int getNumeroTelefone() {
+    public String getNumeroTelefone() {
         return numeroTelefone;
     }
  
-    public void setNumeroTelefone(int numeroTelefone) {
+    public void setNumeroTelefone(String numeroTelefone) {
         this.numeroTelefone = numeroTelefone;
     }
 }
