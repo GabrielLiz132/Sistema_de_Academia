@@ -3,8 +3,18 @@ package models;
 public abstract class FormaPagamento {
 	 
     private String descricao;
- 
-    public FormaPagamento() {
+    private int id;
+
+    public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public FormaPagamento() {
+        this.descricao = null;
     }
  
     public String getDescricao() {

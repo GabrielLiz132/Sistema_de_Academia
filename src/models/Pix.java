@@ -6,6 +6,8 @@ public class Pix extends FormaPagamento {
     private TipoChave tipo;
  
     public Pix() {
+    	super();
+    	setDescricao("Pix");
     }
  
     public String getChave() {
@@ -25,7 +27,6 @@ public class Pix extends FormaPagamento {
     }
  
     public boolean pagar() {
-        // Falta implementar lógica de pagamento via Pix
-        return false;
+        return getTipo() != null && getChave() != null;
     }
 }

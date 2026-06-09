@@ -3,10 +3,11 @@ package models;
 public class CartaoDebito extends Cartao {
 	 
     public CartaoDebito() {
+        super();
+        setDescricao("Cartão de Débito");
     }
  
     public boolean pagar() {
-        // Falta implementar lógica de pagamento com cartão de débito
-        return false;
+        return getBandeira() != null;
     }
 }

@@ -1,10 +1,12 @@
 package models;
 
 public class CartaoCredito extends Cartao {
-	 
     private byte quantidadeParcela;
  
     public CartaoCredito() {
+        super();
+        setDescricao("Cartão de Crédito");
+        this.quantidadeParcela = 1;
     }
  
     public byte getQuantidadeParcela() {
@@ -15,9 +17,7 @@ public class CartaoCredito extends Cartao {
         this.quantidadeParcela = quantidadeParcela;
     }
  
-
     public boolean pagar() {
-        // Falta implementar lógica de pagamento com cartão de crédito
-        return false;
+        return getBandeira() != null && quantidadeParcela > 0;
     }
 }

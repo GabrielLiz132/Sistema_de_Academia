@@ -1,45 +1,45 @@
 package models;
-
+ 
 public class Login {
-	 
     private int id;
     private String codigo;
     private String senhaHash;
  
     public Login() {
+        this.id = -1;
+        this.codigo = null;
+        this.senhaHash = null;
     }
  
     public boolean validarLogin(String codigo, String senha) {
-        String hashSenhaInformada = string2hash(senha);
-        return this.codigo.equals(codigo) && this.senhaHash.equals(hashSenhaInformada);
+        if (this.codigo == null || this.senhaHash == null) return false;
+        return this.codigo.equals(codigo) && this.senhaHash.equals(String.valueOf(senha.hashCode()));
     }
- 
-    public String string2hash(String valor) {
-        // Falta implementar algoritmo de hash
-        return valor;
-    }
- 
+    
     public boolean setSenhaHash(String senhaHash) {
-        if (senhaHash != null && !senhaHash.isEmpty()) {
-            this.senhaHash = senhaHash;
-            return true;
-        }
-        return false;
+        if (senhaHash == null) return false;
+        int numeroHash = senhaHash.hashCode();
+        this.senhaHash = String.valueOf(numeroHash); 
+        return this.senhaHash != null;
     }
  
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
- 
-    public String getCodigo() {
-        return codigo;
+    public String getSenhaHash() {
+		return senhaHash;
+	}
+
+	public int getId() {
+        return id;
     }
  
     public void setId(int id) {
         this.id = id;
     }
  
-    public int getId() {
-        return id;
+    public String getCodigo() {
+        return codigo;
+    }
+ 
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 }
