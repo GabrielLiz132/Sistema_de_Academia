@@ -1,42 +1,138 @@
 package views;
-
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class GuiMenuPrincipal extends JFrame {
-
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+	private Container contentPane;
+    private JMenuBar mnBarra;
+    private JMenu mnArquivo, mnCadastro, mnAjuda;
+    private JMenuItem miSair;
+    private JMenuItem miPessoaFisica, miPessoaJuridica, miProduto, miCompra;
+    private JMenuItem miSobre;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GuiMenuPrincipal frame = new GuiMenuPrincipal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+    public GuiMenuPrincipal() {
+        inicializarComponentes();
+        definirEventos();
+    }
 
-	/**
-	 * Create the frame.
-	 */
-	public GuiMenuPrincipal() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+    private void inicializarComponentes() {
+        setTitle("Menu Principal");
+        setBounds(0, 0, 800, 600);
 
-	}
+        contentPane = getContentPane();
+        mnBarra = new JMenuBar();
 
+        mnArquivo = new JMenu("Arquivo");
+        mnArquivo.setMnemonic('A');
+        mnBarra.add(mnArquivo);
+        
+        mnCadastro = new JMenu("Cadastro");
+        mnCadastro.setMnemonic('C');
+        mnBarra.add(mnCadastro);
+        
+        mnAjuda = new JMenu("Ajuda");
+        mnAjuda.setMnemonic('A');
+        mnBarra.add(mnAjuda);
+        
+        miSair = new JMenuItem( "Sair" );
+        miSair.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_S, ActionEvent.ALT_MASK) );
+        mnArquivo.add(miSair);
+
+        miCompra = new JMenuItem("Compra");
+        miCompra.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_C, ActionEvent.ALT_MASK) );
+        mnCadastro.add(miCompra);
+        
+        miProduto = new JMenuItem("Produto");
+        miProduto.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_P, ActionEvent.ALT_MASK) );
+        mnCadastro.add(miProduto);
+
+        miPessoaFisica = new JMenuItem("Pessoa Física");
+        miPessoaFisica.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_J, ActionEvent.ALT_MASK) );
+        mnCadastro.add(miPessoaFisica);
+        
+        miPessoaJuridica = new JMenuItem("Pessoa Jurídica");
+        miPessoaJuridica.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_J, ActionEvent.ALT_MASK) );
+        mnCadastro.add(miPessoaJuridica);
+        
+        miSobre = new JMenuItem("Sobre...");
+        //Roubado por: kty;
+        mnAjuda.add(miSobre);
+        
+        setJMenuBar(mnBarra);
+    }
+
+    private void definirEventos() {
+        miSair.addActionListener(
+                new ActionListener() {
+                	public void actionPerformed( ActionEvent e) {
+                		System.exit(0);
+                	}
+                });
+
+        miPessoaFisica.addActionListener(
+                new ActionListener() {
+                	public void actionPerformed( ActionEvent e) {
+                		// aqui vai o codigo para chamar o exemplo 8.3
+                		new GuiCadastroAluno().setVisible(true);
+                		JOptionPane.showMessageDialog(null, "Ação de cadastro de Pessoa Física",
+                				"Informação", JOptionPane.INFORMATION_MESSAGE );
+                	}
+                });
+        
+        miPessoaJuridica.addActionListener(
+                new ActionListener() {
+                	public void actionPerformed( ActionEvent e) {
+                		// aqui vai o codigo para chamar o exemplo 8.3
+                		JOptionPane.showMessageDialog(null, "Ação de cadastro de Pessoa Jur�dica",
+								"Informação", JOptionPane.QUESTION_MESSAGE );
+                	}
+                });
+        
+        miCompra.addActionListener(
+                new ActionListener() {
+                	public void actionPerformed( ActionEvent e) {
+                		// aqui vai o codigo para chamar o exemplo 8.3
+                		JOptionPane.showMessageDialog(null, "Ação de cadastro de Compra",
+								"Informação", JOptionPane.PLAIN_MESSAGE );
+                	}
+                });
+        
+        miProduto.addActionListener(
+                new ActionListener() {
+                	public void actionPerformed( ActionEvent e) {
+                		// aqui vai o codigo para chamar o exemplo 8.3
+                		JOptionPane.showMessageDialog(null, "Ação de cadastro de Produto",
+								"Informação", JOptionPane.WARNING_MESSAGE );
+                	}
+                });
+        
+        miSobre.addActionListener(
+                new ActionListener() {
+                	public void actionPerformed( ActionEvent e) {
+                		// aqui vai o codigo para chamar o exemplo 8.3
+                		String message = "Desenvolvidos por:\n" +
+                						 "KyryIx - https://github.com/KyryIx\n" +
+                						 "SrOtimizacao - https://github.com/SrOtimizacao\n" + 
+                						 "Roubado por kty e pinlfloydson para o nosso projeto ";
+                		String title = "Créditos";
+                		JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE );
+                	}
+                });
+    }
+
+    public static void abrir() {
+        GuiMenuPrincipal frame = new GuiMenuPrincipal();
+        frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+
+        Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
+
+        frame.setLocation(
+                (tela.width - frame.getSize().width) / 2,
+                (tela.height - frame.getSize().height) / 2
+        );
+
+        frame.setVisible(true);
+    }
 }
