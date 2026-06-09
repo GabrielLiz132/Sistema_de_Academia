@@ -1,6 +1,5 @@
-package dao;
+package models;
 
-import models.Aluno;
 import java.sql.*;
 
 public class AlunoDAO implements OperacaoBD {
@@ -45,7 +44,7 @@ public class AlunoDAO implements OperacaoBD {
             aluno.setNome( resultSet.getString(2) );
             aluno.setCpf( resultSet.getString(3) );
             aluno.setDataNascimento( resultSet.getDate(4) );
-            aluno.setNumeroTelefone( resultSet.getInt(5) );
+            aluno.setNumeroTelefone( resultSet.getString(5) );
   
             bd.close();
             return true;
@@ -68,7 +67,7 @@ public class AlunoDAO implements OperacaoBD {
                 statement.setString(2, aluno.getNome());
                 statement.setString(3, aluno.getCpf());
                 statement.setDate(4, new java.sql.Date(aluno.getDataNascimento().getTime()));
-                statement.setInt(5, (int) aluno.getNumeroTelefone());
+                statement.setString(5, aluno.getNumeroTelefone());
             }
             else if (operacao == TipoOperacaoBD.ALTERACAO) {
             	sql = "UPDATE  aluno SET nome = ?, cpf = ?, dataNascimento = ?, numeroTelefo = ? WHERE matricula = ?";
@@ -77,7 +76,7 @@ public class AlunoDAO implements OperacaoBD {
                 statement.setString(1, aluno.getNome());
                 statement.setString(2, aluno.getCpf());
                 statement.setDate(3, new java.sql.Date(aluno.getDataNascimento().getTime()));
-                statement.setInt(4, (int) aluno.getNumeroTelefone());    
+                statement.setString(4, aluno.getNumeroTelefone());    
                 statement.setInt(5, aluno.getMatricula());
 
                 

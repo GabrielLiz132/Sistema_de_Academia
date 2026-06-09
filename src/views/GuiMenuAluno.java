@@ -20,6 +20,8 @@ public class GuiMenuAluno extends JFrame {
 				try {
 					GuiMenuAluno frame = new GuiMenuAluno();
 					frame.setVisible(true);
+					new GuiCadastroAluno().setVisible(true);
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

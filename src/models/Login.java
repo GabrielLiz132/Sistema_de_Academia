@@ -22,6 +22,10 @@ public class Login {
         this.senhaHash = String.valueOf(numeroHash); 
         return this.senhaHash != null;
     }
+    public void setString2hash(String valor) {
+        this.senhaHash = valor;
+    }
+    
  
     public String getSenhaHash() {
 		return senhaHash;
