@@ -23,7 +23,11 @@ public class Login {
         return this.senhaHash != null;
     }
  
-    public int getId() {
+    public String getSenhaHash() {
+		return senhaHash;
+	}
+
+	public int getId() {
         return id;
     }
  
