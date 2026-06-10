@@ -70,7 +70,7 @@ public class AlunoDAO implements OperacaoBD {
                 statement.setString(5, aluno.getNumeroTelefone());
             }
             else if (operacao == TipoOperacaoBD.ALTERACAO) {
-            	sql = "UPDATE  aluno SET nome = ?, cpf = ?, dataNascimento = ?, numeroTelefo = ? WHERE matricula = ?";
+            	sql = "UPDATE  aluno SET nome = ?, cpf = ?, dataNascimento = ?, numeroTelefone = ? WHERE matricula = ?";
                 statement = bd.connection.prepareStatement(sql);
                 
                 statement.setString(1, aluno.getNome());
