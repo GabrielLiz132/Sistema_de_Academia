@@ -2,7 +2,7 @@ package views;
 import java.awt.event.*;
 import javax.swing.*;
 
-import models.BD;
+import models.Bd;
 import models.Login;
 import models.LoginDAO;
 
@@ -22,7 +22,7 @@ public class GuiLogin extends JFrame {
 
     private void inicializarComponentes() {
         setTitle("Login no Sistema");
-        setBounds(0, 0, 250, 200);
+        setBounds(600, 400, 250, 200);
         setLayout(null);
 
         tfLogin = new JTextField(5);
@@ -64,7 +64,7 @@ public class GuiLogin extends JFrame {
             	Login login = new Login();
             	login.setCodigo( id );
             	
-            	BD bd = new BD();
+            	Bd bd = new Bd();
             	if ( bd.connect() ) {
             		LoginDAO loginDao = new LoginDAO();
             		loginDao.setBD(bd);

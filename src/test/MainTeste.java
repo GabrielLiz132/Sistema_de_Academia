@@ -1,8 +1,8 @@
 package test;
  
-import models.BD;
+import models.Bd;
 import models.LoginDAO;
-import models.TipoOperacaoBD;
+import models.TipoOperacaoBd;
 import models.Login;
 
  
@@ -17,13 +17,13 @@ public class MainTeste {
         login.setSenhaHash("1234"); // vai ser convertido para hash automaticamente
  
         // 2. Cria o BD e o DAO
-        BD bd = new BD();
+        Bd bd = new Bd();
         LoginDAO loginDao = new LoginDAO();
         loginDao.setBD(bd);
         loginDao.setLogin(login);
  
         // 3. Insere no banco
-        String resultado = loginDao.atualizar(TipoOperacaoBD.INCLUSAO);
+        String resultado = loginDao.atualizar(TipoOperacaoBd.INCLUSAO);
         System.out.println("Resultado: " + resultado);
  
         // 4. Testa o localizar

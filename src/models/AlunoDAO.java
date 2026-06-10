@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class AlunoDAO implements OperacaoBD {
 	 
-    private BD bd;
+    private Bd bd;
     private Aluno aluno;
     
     private PreparedStatement statement;
@@ -18,7 +18,7 @@ public class AlunoDAO implements OperacaoBD {
     }
  
 
-    public void setBd(BD bd) {
+    public void setBd(Bd bd) {
         this.bd = bd;
     }
  
@@ -55,11 +55,11 @@ public class AlunoDAO implements OperacaoBD {
 		}
 	}
 
-	public String atualizar(TipoOperacaoBD operacao) {
+	public String atualizar(TipoOperacaoBd operacao) {
 		if (!bd.connect()) return "Falha ao conectar!";
         msg = "Operação realizada com sucesso!";
         try {
-            if (operacao == TipoOperacaoBD.INCLUSAO) {
+            if (operacao == TipoOperacaoBd.INCLUSAO) {
                 sql = "INSERT into aluno(matricula,nome,cpf,dataNascimento,numeroTelefone) values (?,?,?,?,?)";
                 statement = bd.connection.prepareStatement(sql);
 
@@ -69,7 +69,7 @@ public class AlunoDAO implements OperacaoBD {
                 statement.setDate(4, new java.sql.Date(aluno.getDataNascimento().getTime()));
                 statement.setString(5, aluno.getNumeroTelefone());
             }
-            else if (operacao == TipoOperacaoBD.ALTERACAO) {
+            else if (operacao == TipoOperacaoBd.ALTERACAO) {
             	sql = "UPDATE  aluno SET nome = ?, cpf = ?, dataNascimento = ?, numeroTelefone = ? WHERE matricula = ?";
                 statement = bd.connection.prepareStatement(sql);
                 
@@ -81,7 +81,7 @@ public class AlunoDAO implements OperacaoBD {
 
                 
             }
-            else if (operacao == TipoOperacaoBD.EXCLUSAO) {
+            else if (operacao == TipoOperacaoBd.EXCLUSAO) {
                 sql = "DELETE FROM aluno WHERE matricula = ?";
                 statement = bd.connection.prepareStatement(sql);
 

@@ -7,9 +7,9 @@ public class GuiMenuPrincipal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private Container contentPane;
     private JMenuBar mnBarra;
-    private JMenu mnArquivo, mnCadastro, mnAjuda;
+    private JMenu mnArquivo, mnAjuda, mnAluno, mnProfessor;
     private JMenuItem miSair;
-    private JMenuItem miPessoaFisica, miPessoaJuridica, miProduto, miCompra;
+    private JMenuItem miAluno, miProfessor, miCadastroPlanoTreino, miConsultaPlanoTreino, miPagamento;
     private JMenuItem miSobre;
 
     public GuiMenuPrincipal() {
@@ -19,7 +19,7 @@ public class GuiMenuPrincipal extends JFrame {
 
     private void inicializarComponentes() {
         setTitle("Menu Principal");
-        setBounds(0, 0, 800, 600);
+        setBounds(600, 400, 358, 249);
 
         contentPane = getContentPane();
         mnBarra = new JMenuBar();
@@ -28,9 +28,13 @@ public class GuiMenuPrincipal extends JFrame {
         mnArquivo.setMnemonic('A');
         mnBarra.add(mnArquivo);
         
-        mnCadastro = new JMenu("Cadastro");
-        mnCadastro.setMnemonic('C');
-        mnBarra.add(mnCadastro);
+        mnAluno = new JMenu("Aluno");
+        mnAluno.setMnemonic('A');
+        mnBarra.add(mnAluno);
+
+        mnProfessor = new JMenu("Professor");
+        mnProfessor.setMnemonic('P');
+        mnBarra.add(mnProfessor);
         
         mnAjuda = new JMenu("Ajuda");
         mnAjuda.setMnemonic('A');
@@ -40,24 +44,29 @@ public class GuiMenuPrincipal extends JFrame {
         miSair.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_S, ActionEvent.ALT_MASK) );
         mnArquivo.add(miSair);
 
-        miCompra = new JMenuItem("Compra");
-        miCompra.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_C, ActionEvent.ALT_MASK) );
-        mnCadastro.add(miCompra);
+        miPagamento = new JMenuItem("Pagamento");
+        miPagamento.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_C, ActionEvent.ALT_MASK) );
+        mnAluno.add(miPagamento);
         
-        miProduto = new JMenuItem("Produto");
-        miProduto.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_P, ActionEvent.ALT_MASK) );
-        mnCadastro.add(miProduto);
-
-        miPessoaFisica = new JMenuItem("Pessoa Física");
-        miPessoaFisica.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_J, ActionEvent.ALT_MASK) );
-        mnCadastro.add(miPessoaFisica);
+        miCadastroPlanoTreino = new JMenuItem("Cadastro Plano de Treino");
+        miCadastroPlanoTreino.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_P, ActionEvent.ALT_MASK) );
+        mnProfessor.add(miCadastroPlanoTreino);
         
-        miPessoaJuridica = new JMenuItem("Pessoa Jurídica");
-        miPessoaJuridica.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_J, ActionEvent.ALT_MASK) );
-        mnCadastro.add(miPessoaJuridica);
+        miConsultaPlanoTreino = new JMenuItem("Consulta Plano de Treino");
+        miConsultaPlanoTreino.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_O, ActionEvent.ALT_MASK) );
+        mnAluno.add(miConsultaPlanoTreino);
+        
+        miAluno = new JMenuItem("Cadastro e Alteração de Aluno");
+        miAluno.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_X, ActionEvent.ALT_MASK) );
+        mnProfessor.add(miAluno);
+        
+        miProfessor = new JMenuItem("Cadastro e Alteração de Professor");
+        miProfessor.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_J, ActionEvent.ALT_MASK) );
+        mnProfessor.add(miProfessor);
+        
         
         miSobre = new JMenuItem("Sobre...");
-        //Roubado por: kty;
+
         mnAjuda.add(miSobre);
         
         setJMenuBar(mnBarra);
@@ -71,39 +80,47 @@ public class GuiMenuPrincipal extends JFrame {
                 	}
                 });
 
-        miPessoaFisica.addActionListener(
+        miAluno.addActionListener(
                 new ActionListener() {
                 	public void actionPerformed( ActionEvent e) {
-                		// aqui vai o codigo para chamar o exemplo 8.3
-                		new GuiCadastroAluno().setVisible(true);
-                		JOptionPane.showMessageDialog(null, "Ação de cadastro de Pessoa Física",
+                		GuiCadastroAluno.abrir();
+                		JOptionPane.showMessageDialog(null, "Ação de cadastro de alunos",
                 				"Informação", JOptionPane.INFORMATION_MESSAGE );
                 	}
                 });
         
-        miPessoaJuridica.addActionListener(
+        miProfessor.addActionListener(
                 new ActionListener() {
                 	public void actionPerformed( ActionEvent e) {
                 		// aqui vai o codigo para chamar o exemplo 8.3
-                		JOptionPane.showMessageDialog(null, "Ação de cadastro de Pessoa Jur�dica",
+                		JOptionPane.showMessageDialog(null, "Ação de cadastro de Pessoa professor",
 								"Informação", JOptionPane.QUESTION_MESSAGE );
                 	}
                 });
         
-        miCompra.addActionListener(
+        miPagamento.addActionListener(
                 new ActionListener() {
                 	public void actionPerformed( ActionEvent e) {
-                		// aqui vai o codigo para chamar o exemplo 8.3
+                		GuiPagamento.abrir();
                 		JOptionPane.showMessageDialog(null, "Ação de cadastro de Compra",
 								"Informação", JOptionPane.PLAIN_MESSAGE );
                 	}
                 });
         
-        miProduto.addActionListener(
+        miCadastroPlanoTreino.addActionListener(
                 new ActionListener() {
                 	public void actionPerformed( ActionEvent e) {
                 		// aqui vai o codigo para chamar o exemplo 8.3
-                		JOptionPane.showMessageDialog(null, "Ação de cadastro de Produto",
+                		JOptionPane.showMessageDialog(null, "Ação de cadastro de plano de treino",
+								"Informação", JOptionPane.WARNING_MESSAGE );
+                	}
+                });
+        
+        miConsultaPlanoTreino.addActionListener(
+                new ActionListener() {
+                	public void actionPerformed( ActionEvent e) {
+                		// aqui vai o codigo para chamar o exemplo 8.3
+                		JOptionPane.showMessageDialog(null, "Ação de consulta de plano de treino",
 								"Informação", JOptionPane.WARNING_MESSAGE );
                 	}
                 });

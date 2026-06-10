@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class PagamentoDAO implements OperacaoBD {
 	 
-    private BD bd;
+    private Bd bd;
     private Pagamento pagamento;
     private PreparedStatement statement;
     private ResultSet resultSet;
@@ -13,7 +13,7 @@ public class PagamentoDAO implements OperacaoBD {
     public PagamentoDAO() {
     }
  
-    public void setBD(BD bd) {
+    public void setBD(Bd bd) {
         this.bd = bd;
     }
  
@@ -94,14 +94,14 @@ public class PagamentoDAO implements OperacaoBD {
 	}
 
 	@Override
-	public String atualizar(TipoOperacaoBD operacao) {
+	public String atualizar(TipoOperacaoBd operacao) {
         if (pagamento == null) return "Pagamento nulo!";
         if (!bd.connect()) return "Falha ao conectar!";
  
         msg = "Operacao realizada com sucesso!";
  
         try {
-            if (operacao == TipoOperacaoBD.INCLUSAO) {
+            if (operacao == TipoOperacaoBd.INCLUSAO) {
  
                 sql = "INSERT INTO pagamento(valor) VALUES (?)";
                 statement = bd.connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -118,7 +118,7 @@ public class PagamentoDAO implements OperacaoBD {
  
                 inserirFormasPagamento(idGerado);
  
-            } else if (operacao == TipoOperacaoBD.ALTERACAO) {
+            } else if (operacao == TipoOperacaoBd.ALTERACAO) {
  
                 sql = "UPDATE pagamento SET valor = ? WHERE id_pagamento = ?";
                 statement = bd.connection.prepareStatement(sql);
@@ -133,7 +133,7 @@ public class PagamentoDAO implements OperacaoBD {
  
                 inserirFormasPagamento(pagamento.getId());
  
-            } else if (operacao == TipoOperacaoBD.EXCLUSAO) {
+            } else if (operacao == TipoOperacaoBd.EXCLUSAO) {
  
                 sql = "DELETE FROM formaPagamento WHERE id_pagamento = ?";
                 statement = bd.connection.prepareStatement(sql);
