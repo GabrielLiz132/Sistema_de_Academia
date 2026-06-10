@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class BD {
+public class Bd {
 	private String host;
 	private int port;
 	private String dbName;
@@ -12,12 +12,12 @@ public class BD {
 	private String senha;
 	public Connection connection;
 		
-	public BD() {
+	public Bd() {
 		this.host = "localhost";
 		this.port = 3306;
-		this.dbName = "SistemaDeAcademia";
+		this.dbName = "academia";
 		this.login = "root";
-		this.senha = "";
+		this.senha = "2386";
 		this.connection = null;
 	}
 		

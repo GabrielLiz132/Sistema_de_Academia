@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class LoginDAO implements OperacaoBD {
 	 
-    private BD bd;
+    private Bd bd;
     private Login login;
 
     private PreparedStatement statement;
@@ -25,7 +25,7 @@ public class LoginDAO implements OperacaoBD {
         return login;
     }
  
-    public void setBD(BD bd) {
+    public void setBD(Bd bd) {
         this.bd = bd;
     }
 
@@ -54,11 +54,11 @@ public class LoginDAO implements OperacaoBD {
 	}
 
 	@Override
-	 public String atualizar(TipoOperacaoBD operacao) {
+	 public String atualizar(TipoOperacaoBd operacao) {
 		if (!bd.connect()) return "Falha ao conectar!";
         msg = "Operação realizada com sucesso!";
         try {
-            if (operacao == TipoOperacaoBD.INCLUSAO) {
+            if (operacao == TipoOperacaoBd.INCLUSAO) {
             	sql = "INSERT into login(id, codigo, senhaHash) values (?,?,?)";
                 statement = bd.connection.prepareStatement(sql);
 
@@ -66,14 +66,14 @@ public class LoginDAO implements OperacaoBD {
                 statement.setString(2, login.getCodigo());
                 statement.setString(3, login.getSenhaHash());
             }
-            else if (operacao == TipoOperacaoBD.ALTERACAO) {
+            else if (operacao == TipoOperacaoBd.ALTERACAO) {
             	sql = "UPDATE login SET senhaHash = ? WHERE id = ?";
                 statement = bd.connection.prepareStatement(sql);
 
                 statement.setString(1, login.getSenhaHash());
                 statement.setInt(2, login.getId());
             }
-            else if (operacao == TipoOperacaoBD.EXCLUSAO) {
+            else if (operacao == TipoOperacaoBd.EXCLUSAO) {
                 sql = "DELETE FROM login WHERE id = ?";
                 statement = bd.connection.prepareStatement(sql);
 

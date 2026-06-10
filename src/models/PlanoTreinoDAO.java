@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class PlanoTreinoDAO implements OperacaoBD {
-	private BD bd;
+	private Bd bd;
 	private PlanoTreino planoTreino;
 	
 	private PreparedStatement statement;
@@ -17,7 +17,7 @@ public class PlanoTreinoDAO implements OperacaoBD {
 		this.planoTreino = null;
 	}
 
-	public void setBd(BD bd) {
+	public void setBd(Bd bd) {
 		this.bd = bd;
 	}
 
@@ -31,7 +31,6 @@ public class PlanoTreinoDAO implements OperacaoBD {
 
 	@Override
 	public boolean localizar() {
-		// TODO Auto-generated method stub		
 		sql = "SELECT * FROM PlanoTreino WHERE idPlanoTreino = ?";
 
 		try {
@@ -44,7 +43,6 @@ public class PlanoTreinoDAO implements OperacaoBD {
 		    
 		    planoTreino.setIdPlanoTreino(resultSet.getInt(1));
 
-		    // Aluno
 		    Aluno aluno = new Aluno();
 		    aluno.setMatricula(resultSet.getInt(2));
 
@@ -220,11 +218,11 @@ public class PlanoTreinoDAO implements OperacaoBD {
 	}
 	
 	@Override
-	public String atualizar(TipoOperacaoBD operacao) {
+	public String atualizar(TipoOperacaoBd operacao) {
 		// TODO Auto-generated method stub
 		msg = "Operação realizada com sucesso!";
         try {
-            if (operacao == TipoOperacaoBD.INCLUSAO) {
+            if (operacao == TipoOperacaoBd.INCLUSAO) {
             	
             	// Insere PlanoTreino
             	
@@ -263,7 +261,7 @@ public class PlanoTreinoDAO implements OperacaoBD {
                     statement.executeUpdate();
                 }               
             }
-            else if (operacao == TipoOperacaoBD.ALTERACAO) {
+            else if (operacao == TipoOperacaoBd.ALTERACAO) {
            
             	sql = "UPDATE PlanoTreino SET matriculaAluno=?, cpfProfessor=?, dataDeCriacao=? WHERE idPlanoTreino=?";
                 statement = bd.connection.prepareStatement(sql);
@@ -302,7 +300,7 @@ public class PlanoTreinoDAO implements OperacaoBD {
                     statement.executeUpdate();
                 }
             }
-            else if (operacao == TipoOperacaoBD.EXCLUSAO) {
+            else if (operacao == TipoOperacaoBd.EXCLUSAO) {
 
                 sql = "DELETE FROM ExerciciosPlanoTreino WHERE idPlanoTreino=?";
                 statement = bd.connection.prepareStatement(sql);

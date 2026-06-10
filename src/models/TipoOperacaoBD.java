@@ -1,6 +1,6 @@
 package models;
 
-public enum TipoOperacaoBD {
+public enum TipoOperacaoBd {
 	INCLUSAO,
 	ALTERACAO,
 	EXCLUSAO

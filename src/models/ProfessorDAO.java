@@ -3,7 +3,7 @@ package models;
 import java.sql.*;
 
 public class ProfessorDAO implements OperacaoBD {
-	private BD bd;
+	private Bd bd;
 	private Professor professor;
 	
 	 private PreparedStatement statement;
@@ -16,7 +16,7 @@ public class ProfessorDAO implements OperacaoBD {
 		this.professor = null;
 	}
 	
-	public void setBd(BD bd) {
+	public void setBd(Bd bd) {
 		this.bd = bd;
 	}
 
@@ -54,11 +54,11 @@ public class ProfessorDAO implements OperacaoBD {
         
 
 	@Override
-	public String atualizar(TipoOperacaoBD operacao) {
+	public String atualizar(TipoOperacaoBd operacao) {
 		// TODO Auto-generated method stub
 		msg = "Operação realizada com sucesso!";
     	try {
-    		if (operacao == TipoOperacaoBD.INCLUSAO) {
+    		if (operacao == TipoOperacaoBd.INCLUSAO) {
     			sql = "INSERT INTO professor (cpf,nome,dataNascimento,numeroTelefone,cref,especialidade) VALUES (?,?,?,?,?,?)";
     			statement = bd.connection.prepareStatement(sql);
 
@@ -70,7 +70,7 @@ public class ProfessorDAO implements OperacaoBD {
     			statement.setString(5, professor.getCref());
     			statement.setString(6, professor.getEspecialidade());
     		}
-    		else if (operacao == TipoOperacaoBD.ALTERACAO) {
+    		else if (operacao == TipoOperacaoBd.ALTERACAO) {
     			sql = "UPDATE professor SET nome=?, dataNascimento=?, numeroTelefone=?, cref=?, especialidade=? WHERE cpf=?";
     			statement = bd.connection.prepareStatement(sql);
 
@@ -81,7 +81,7 @@ public class ProfessorDAO implements OperacaoBD {
     			statement.setString(5, professor.getEspecialidade());
     			statement.setString(6, professor.getCpf());
     		}
-    		else if (operacao == TipoOperacaoBD.EXCLUSAO) {
+    		else if (operacao == TipoOperacaoBd.EXCLUSAO) {
     			sql = "DELETE FROM professor WHERE cpf=?";
     			statement = bd.connection.prepareStatement(sql);
 
