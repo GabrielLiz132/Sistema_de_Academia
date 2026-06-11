@@ -37,7 +37,7 @@ public class GuiPagamento extends JFrame {
 	private Container contentPane;
 	private JLabel lbTitulo, lbValor, lbFormaPagamento, lbChavePix, lbBandeira, lbParcelas, lbTipoChave;
 	private JTextField tfValor, tfChavePix, tfParcelas;
-	private JComboBox cbFormaPagamento, cbTipoChave, cbBandeira, cbParcelas;
+	private JComboBox cbFormaPagamento, cbTipoChave, cbBandeira;
 	private JButton btPagar, btSair, btLimpar;
 
     public GuiPagamento() {
@@ -47,7 +47,7 @@ public class GuiPagamento extends JFrame {
 
     private void inicializarComponentes() {
     	setTitle("Pagamentos");
-        setBounds(600, 410, 446, 359);
+        setBounds(600, 410, 446, 293);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
         
@@ -104,15 +104,15 @@ public class GuiPagamento extends JFrame {
         contentPane.add(tfParcelas);
 
         btPagar = new JButton("Pagar");
-        btPagar.setBounds(60, 290, 100, 30);
+        btPagar.setBounds(58, 197, 100, 30);
         contentPane.add(btPagar);
         
         btLimpar = new JButton("Limpar");
-        btLimpar.setBounds(170, 290, 100, 30);
+        btLimpar.setBounds(168, 197, 100, 30);
         contentPane.add(btLimpar);
         
         btSair = new JButton("Sair");
-        btSair.setBounds(280, 290, 100, 30);
+        btSair.setBounds(278, 197, 100, 30);
         contentPane.add(btSair);
         
         esconderTudo();
