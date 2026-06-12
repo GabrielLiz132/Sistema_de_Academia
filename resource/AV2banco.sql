@@ -59,6 +59,3 @@ CREATE TABLE ExerciciosPlanoTreino (
     FOREIGN KEY (idPlanoTreino)
         REFERENCES PlanoTreino(idPlanoTreino)
 );
-
-Select * from Professor;
-Select * from Aluno;
