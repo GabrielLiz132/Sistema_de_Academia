@@ -30,7 +30,7 @@ public class ProfessorDAO implements OperacaoBd {
 
 	@Override
 	public boolean localizar() {
-		// TODO Auto-generated method stub
+		if (!bd.connect()) return false;
 		sql = "SELECT * FROM professor where cpf = ?";
         try {
             statement = bd.connection.prepareStatement(sql);
@@ -55,7 +55,7 @@ public class ProfessorDAO implements OperacaoBd {
 
 	@Override
 	public String atualizar(TipoOperacaoBd operacao) {
-		// TODO Auto-generated method stub
+		if (!bd.connect()) return "Falha ao conectar!";
 		msg = "Operação realizada com sucesso!";
     	try {
     		if (operacao == TipoOperacaoBd.INCLUSAO) {
@@ -94,7 +94,6 @@ public class ProfessorDAO implements OperacaoBd {
     	catch(SQLException erro) {
     		msg = "Falha na operação - " + erro.toString();
     	}
-
     	return msg;
 	}	
 		
