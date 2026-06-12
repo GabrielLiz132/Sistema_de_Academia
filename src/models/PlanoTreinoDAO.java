@@ -3,7 +3,7 @@ package models;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class PlanoTreinoDAO implements OperacaoBD {
+public class PlanoTreinoDAO implements OperacaoBd {
 	private BD bd;
 	private PlanoTreino planoTreino;
 	
