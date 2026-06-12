@@ -5,7 +5,6 @@ import javax.swing.*;
 
 public class GuiMenuPrincipal extends JFrame {
 	private static final long serialVersionUID = 1L;
-	private Container contentPane;
     private JMenuBar mnBarra;
     private JMenu mnArquivo, mnAjuda, mnAluno, mnProfessor;
     private JMenuItem miSair;
@@ -21,7 +20,6 @@ public class GuiMenuPrincipal extends JFrame {
         setTitle("Menu Principal");
         setBounds(600, 400, 358, 249);
 
-        contentPane = getContentPane();
         mnBarra = new JMenuBar();
 
         mnArquivo = new JMenu("Arquivo");
