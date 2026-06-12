@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class LoginDAO implements OperacaoBD {
 	 
-    private Bd bd;
+    private BD bd;
     private Login login;
 
     private PreparedStatement statement;
@@ -25,7 +25,7 @@ public class LoginDAO implements OperacaoBD {
         return login;
     }
  
-    public void setBD(Bd bd) {
+    public void setBD(BD bd) {
         this.bd = bd;
     }
 

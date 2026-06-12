@@ -2,7 +2,7 @@ package views;
 import java.awt.event.*;
 import javax.swing.*;
 
-import models.Bd;
+import models.BD;
 import models.Login;
 import models.LoginDAO;
 
@@ -64,7 +64,7 @@ public class GuiLogin extends JFrame {
             	Login login = new Login();
             	login.setCodigo( id );
             	
-            	Bd bd = new Bd();
+            	BD bd = new BD();
             	if ( bd.connect() ) {
             		LoginDAO loginDao = new LoginDAO();
             		loginDao.setBD(bd);

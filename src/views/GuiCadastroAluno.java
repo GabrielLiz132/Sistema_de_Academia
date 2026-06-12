@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import javax.swing.*;
  
 import models.AlunoDAO;
-import models.Bd;
+import models.BD;
 import models.TipoOperacaoBd;
 import models.Aluno;
  
@@ -103,7 +103,7 @@ public class GuiCadastroAluno extends JFrame {
                 Aluno aluno = preencherAluno();
                 if (aluno == null) return;
  
-                Bd bd = new Bd();
+                BD bd = new BD();
                 AlunoDAO dao = new AlunoDAO();
                 dao.setBd(bd);
                 dao.setAluno(aluno);
@@ -123,7 +123,7 @@ public class GuiCadastroAluno extends JFrame {
                 Aluno aluno = new Aluno();
                 aluno.setMatricula(Integer.parseInt(tfMatricula.getText()));
  
-                Bd bd = new Bd();
+                BD bd = new BD();
                 AlunoDAO dao = new AlunoDAO();
                 dao.setBd(bd);
                 dao.setAluno(aluno);
@@ -147,7 +147,7 @@ public class GuiCadastroAluno extends JFrame {
                 Aluno aluno = preencherAluno();
                 if (aluno == null) return;
  
-                Bd bd = new Bd();
+                BD bd = new BD();
                 AlunoDAO dao = new AlunoDAO();
                 dao.setBd(bd);
                 dao.setAluno(aluno);
@@ -172,7 +172,7 @@ public class GuiCadastroAluno extends JFrame {
                     Aluno aluno = new Aluno();
                     aluno.setMatricula(Integer.parseInt(tfMatricula.getText()));
  
-                    Bd bd = new Bd();
+                    BD bd = new BD();
                     AlunoDAO dao = new AlunoDAO();
                     dao.setBd(bd);
                     dao.setAluno(aluno);
