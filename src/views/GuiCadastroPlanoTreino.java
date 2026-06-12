@@ -193,12 +193,12 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		 
 		spTricepsTesta = new JSpinner();
 		spTricepsTesta.setToolTipText("Quantidade de Repetiçoes");
-		spTricepsTesta.setBounds(668, 242, 43, 20);
+		spTricepsTesta.setBounds(678, 242, 43, 20);
 		getContentPane().add(spTricepsTesta);
 		
 		spTricepsComHalter = new JSpinner();
 		spTricepsComHalter.setToolTipText("Quantidade de Repetiçoes");
-		spTricepsComHalter.setBounds(668, 216, 43, 20);
+		spTricepsComHalter.setBounds(678, 216, 43, 20);
 		getContentPane().add(spTricepsComHalter);
 		
 		chckbxTricepsNaPolia = new JCheckBox("TricepsNaPolia");
@@ -208,7 +208,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		
 		spTricepsNaPolia = new JSpinner();
 		spTricepsNaPolia.setToolTipText("Quantidade de Repetiçoes");
-		spTricepsNaPolia.setBounds(668, 268, 43, 20);
+		spTricepsNaPolia.setBounds(678, 268, 43, 20);
 		getContentPane().add(spTricepsNaPolia);
 		
 		chckbxDesenvolvimentoComHalter = new JCheckBox("DesenvolvimentoComHalter");
@@ -261,9 +261,9 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		spRemadaSerrote.setBounds(428, 328, 44, 20);
 		getContentPane().add(spRemadaSerrote);
 		
-		chckbxPranchaFrontal = new JCheckBox("PranchaFrontal (minutos)");
-		chckbxPranchaFrontal.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxPranchaFrontal.setBounds(505, 351, 157, 23);
+		chckbxPranchaFrontal = new JCheckBox("PranchaFrontal (segundos) ");
+		chckbxPranchaFrontal.setHorizontalAlignment(SwingConstants.CENTER);
+		chckbxPranchaFrontal.setBounds(488, 353, 188, 23);
 		getContentPane().add(chckbxPranchaFrontal);
 		
 		chckbxAbdominalArticulado = new JCheckBox("AbdominalArticulado");
@@ -273,12 +273,12 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		
 		spAbdominalArticulado = new JSpinner();
 		spAbdominalArticulado.setToolTipText("Quantidade de Repetiçoes");
-		spAbdominalArticulado.setBounds(668, 326, 43, 20);
+		spAbdominalArticulado.setBounds(678, 328, 43, 20);
 		getContentPane().add(spAbdominalArticulado);
 		
 		spPranchaFrontal = new JSpinner();
 		spPranchaFrontal.setToolTipText("Quantidade de Tempo");
-		spPranchaFrontal.setBounds(668, 351, 43, 20);
+		spPranchaFrontal.setBounds(678, 354, 43, 20);
 		getContentPane().add(spPranchaFrontal);
 		
 		chckbxPanturrilhaSentado = new JCheckBox("PanturrilhaSentado");
@@ -371,7 +371,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		spElevacaoPelvica.setBounds(666, 440, 45, 20);
 		getContentPane().add(spElevacaoPelvica);
 		 
-		lblCardio = new JLabel("Cardio (quantidade em minutos)");
+		lblCardio = new JLabel("Cardio (quantidade em segundos)");
 		lblCardio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCardio.setBounds(721, 295, 195, 25);
 		getContentPane().add(lblCardio);

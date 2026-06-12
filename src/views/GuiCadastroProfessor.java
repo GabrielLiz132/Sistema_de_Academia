@@ -27,7 +27,7 @@ public class GuiCadastroProfessor extends JFrame{
 	}
 	public void inicializarComponentes() {
 		setTitle("Cadastro do professor");
-		setBounds(600, 410, 446, 359);
+		setBounds(600, 410, 495, 360);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
         
@@ -42,62 +42,62 @@ public class GuiCadastroProfessor extends JFrame{
 		
 		lbNome = new JLabel("Nome: ");
 		lbNome.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbNome.setBounds(20, 53, 124, 20);
+		lbNome.setBounds(20, 53, 134, 20);
 		getContentPane().add(lbNome);
 		
 		tfNome = new JTextField(); 
-		tfNome.setBounds(154, 53, 163, 20);
+		tfNome.setBounds(164, 53, 163, 20);
 		getContentPane().add(tfNome);
 		tfNome.setColumns(10);
 		
 		lbCpf = new JLabel("CPF: ");
 		lbCpf.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbCpf.setBounds(20, 84, 124, 20);
+		lbCpf.setBounds(20, 84, 134, 20);
 		getContentPane().add(lbCpf);
 		
 		tfCpf = new JTextField();
-		tfCpf.setBounds(154, 84, 163, 20);
+		tfCpf.setBounds(164, 84, 163, 20);
 		getContentPane().add(tfCpf);
 		tfCpf.setColumns(10);
 		
 		tfDataNascimento = new JTextField();
-		tfDataNascimento.setBounds(154, 115, 163, 20);
+		tfDataNascimento.setBounds(164, 115, 163, 20);
 		getContentPane().add(tfDataNascimento);
 		tfDataNascimento.setColumns(10);
 		
 		tfNumeroTelefone = new JTextField();
-		tfNumeroTelefone.setBounds(154, 146, 163, 20);
+		tfNumeroTelefone.setBounds(164, 146, 163, 20);
 		getContentPane().add(tfNumeroTelefone);
 		tfNumeroTelefone.setColumns(10);
 		
 		lbDataNascimento = new JLabel("Data Nasc. (dd/MM/yyyy):");
 		lbDataNascimento.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbDataNascimento.setBounds(10, 115, 134, 20);
+		lbDataNascimento.setBounds(10, 115, 144, 20);
 		getContentPane().add(lbDataNascimento);
 		
 		lbNumeroTelefone = new JLabel("Telefone: ");
 		lbNumeroTelefone.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbNumeroTelefone.setBounds(20, 146, 124, 20);
+		lbNumeroTelefone.setBounds(20, 146, 134, 20);
 		getContentPane().add(lbNumeroTelefone);
 		
 		lbCref = new JLabel("CREF: ");
 		lbCref.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbCref.setBounds(10, 177, 134, 20);
+		lbCref.setBounds(10, 177, 144, 20);
 		getContentPane().add(lbCref);
 		
 		tfCref = new JTextField();
 		tfCref.setColumns(10);
-		tfCref.setBounds(154, 177, 163, 20);
+		tfCref.setBounds(164, 177, 163, 20);
 		getContentPane().add(tfCref);
 		
 		tfEspecialidade = new JTextField();
 		tfEspecialidade.setColumns(10);
-		tfEspecialidade.setBounds(154, 208, 163, 20);
+		tfEspecialidade.setBounds(164, 208, 163, 20);
 		getContentPane().add(tfEspecialidade);
 		
 		lbEspecialidade = new JLabel("Especialidade: ");
 		lbEspecialidade.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbEspecialidade.setBounds(10, 208, 134, 20);
+		lbEspecialidade.setBounds(10, 208, 144, 20);
 		getContentPane().add(lbEspecialidade);
 		
 		btSalvar = new JButton("Salvar");
