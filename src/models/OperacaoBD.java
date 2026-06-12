@@ -1,6 +1,6 @@
 package models;
 
-public interface OperacaoBD {
+public interface OperacaoBd {
 	public boolean localizar();
 	public String atualizar(TipoOperacaoBd operacao);
 }
