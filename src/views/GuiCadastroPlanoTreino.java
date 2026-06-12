@@ -471,7 +471,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
                 PlanoTreino planoTreino = preencherPlanoTreino();
                 if (planoTreino == null) return;
  
-                Bd bd = new Bd();
+                BD bd = new BD();
                 PlanoTreinoDAO dao = new PlanoTreinoDAO();
                 dao.setBd(bd);
                 dao.setPlanoTreino(planoTreino);
@@ -486,7 +486,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
                 PlanoTreino planoTreino= preencherPlanoTreino();
                 if (planoTreino == null) return;
  
-                Bd bd = new Bd();
+                BD bd = new BD();
                 PlanoTreinoDAO dao = new PlanoTreinoDAO();
                 dao.setBd(bd);
                 dao.setPlanoTreino(planoTreino);
@@ -511,7 +511,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
                     PlanoTreino planoTreino = new PlanoTreino();
                     planoTreino.setIdPlanoTreino(Integer.parseInt(tfIdPlanoTreino.getText()));
  
-                    Bd bd = new Bd();
+                    BD bd = new BD();
                     PlanoTreinoDAO dao = new PlanoTreinoDAO();
                     dao.setBd(bd);
                     dao.setPlanoTreino(planoTreino);
