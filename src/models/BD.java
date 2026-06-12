@@ -17,7 +17,7 @@ public class Bd {
 		this.port = 3306;
 		this.dbName = "academia";
 		this.login = "root";
-		this.senha = "2386";
+		this.senha = "1325674gG#";
 		this.connection = null;
 	}
 		
