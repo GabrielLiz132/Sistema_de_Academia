@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class AlunoDAO implements OperacaoBd {
 	 
-    private BD bd;
+    private Bd bd;
     private Aluno aluno;
     
     private PreparedStatement statement;
@@ -18,7 +18,7 @@ public class AlunoDAO implements OperacaoBd {
     }
  
 
-    public void setBd(BD bd) {
+    public void setBd(Bd bd) {
         this.bd = bd;
     }
  

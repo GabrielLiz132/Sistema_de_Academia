@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class PlanoTreinoDAO implements OperacaoBd {
-	private BD bd;
+	private Bd bd;
 	private PlanoTreino planoTreino;
 	
 	private PreparedStatement statement;
@@ -15,11 +15,11 @@ public class PlanoTreinoDAO implements OperacaoBd {
 	public PlanoTreinoDAO() {
 		this.bd = null;
 		this.planoTreino = null;
-		bd = new BD();
+		bd = new Bd();
 		bd.connect();
 	}
 
-	public void setBd(BD bd) {
+	public void setBd(Bd bd) {
 		this.bd = bd;
 	}
 

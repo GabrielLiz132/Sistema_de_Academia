@@ -9,7 +9,7 @@ import javax.swing.*;
 
 import models.Professor;
 import models.ProfessorDAO;
-import models.BD;
+import models.Bd;
 import models.TipoOperacaoBd;
 
 public class GuiCadastroProfessor extends JFrame{
@@ -128,7 +128,7 @@ public class GuiCadastroProfessor extends JFrame{
 	                Professor professor = preencherProfessor();
 	                if (professor == null) return;
 	 
-	                BD bd = new BD();
+	                Bd bd = new Bd();
 	                ProfessorDAO dao = new ProfessorDAO();
 	                dao.setBd(bd);
 	                dao.setProfessor(professor);
@@ -148,7 +148,7 @@ public class GuiCadastroProfessor extends JFrame{
 	                Professor professor = new Professor();
 	                professor.setCpf(tfCpf.getText());
 	 
-	                BD bd = new BD();
+	                Bd bd = new Bd();
 	                ProfessorDAO dao = new ProfessorDAO();
 	                dao.setBd(bd);
 	                dao.setProfessor(professor);
@@ -174,7 +174,7 @@ public class GuiCadastroProfessor extends JFrame{
 	            	Professor professor = preencherProfessor();
 	                if (professor == null) return;
 	 
-	                BD bd = new BD();
+	                Bd bd = new Bd();
 	                ProfessorDAO dao = new ProfessorDAO();
 	                dao.setBd(bd);
 	                dao.setProfessor(professor);
@@ -199,7 +199,7 @@ public class GuiCadastroProfessor extends JFrame{
 	                    Professor professor = new Professor();
 	                    professor.setCpf(tfCpf.getText());
 	 
-	                    BD bd = new BD();
+	                    Bd bd = new Bd();
 	                    ProfessorDAO dao = new ProfessorDAO();
 	                    dao.setBd(bd);
 	                    dao.setProfessor(professor);
