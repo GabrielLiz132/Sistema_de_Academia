@@ -15,7 +15,7 @@ public class MainTeste {
         login.setSenhaHash("1234"); // vai ser convertido para hash automaticamente
  
         // 2. Cria o BD e o DAO
-        BD bd = new BD();
+        Bd bd = new Bd();
         LoginDAO loginDao = new LoginDAO();
         loginDao.setBD(bd);
         loginDao.setLogin(login);

@@ -3,7 +3,7 @@ package models;
 import java.sql.*;
 
 public class ProfessorDAO implements OperacaoBd {
-	private BD bd;
+	private Bd bd;
 	private Professor professor;
 	
 	 private PreparedStatement statement;
@@ -16,7 +16,7 @@ public class ProfessorDAO implements OperacaoBd {
 		this.professor = null;
 	}
 	
-	public void setBd(BD bd) {
+	public void setBd(Bd bd) {
 		this.bd = bd;
 	}
 

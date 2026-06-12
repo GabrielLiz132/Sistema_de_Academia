@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 import models.TipoChave;
 import models.TipoOperacaoBd;
 import models.BandeiraCartao;
-import models.BD;
+import models.Bd;
 import models.CartaoCredito;
 import models.CartaoDebito;
 import models.Dinheiro;
@@ -176,7 +176,7 @@ public class GuiPagamento extends JFrame {
                 PlanoTreino plano = new PlanoTreino();
                 plano.setIdPlanoTreino(Integer.parseInt(tfIdPlano.getText()));
 
-                BD bd = new BD();
+                Bd bd = new Bd();
                 PlanoTreinoDAO dao = new PlanoTreinoDAO();
                 dao.setBd(bd);
                 dao.setPlanoTreino(plano);
@@ -257,7 +257,7 @@ public class GuiPagamento extends JFrame {
             }
 
             // Salva no banco
-            BD bd = new BD();
+            Bd bd = new Bd();
             PagamentoDAO dao = new PagamentoDAO();
             dao.setBD(bd);
             dao.setPagamento(pagamento);
