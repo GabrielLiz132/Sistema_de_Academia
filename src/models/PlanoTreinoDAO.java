@@ -3,8 +3,8 @@ package models;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class PlanoTreinoDAO implements OperacaoBd {
-	private Bd bd;
+public class PlanoTreinoDAO implements OperacaoBD {
+	private BD bd;
 	private PlanoTreino planoTreino;
 	
 	private PreparedStatement statement;
@@ -17,7 +17,7 @@ public class PlanoTreinoDAO implements OperacaoBd {
 		this.planoTreino = null;
 	}
 
-	public void setBd(Bd bd) {
+	public void setBd(BD bd) {
 		this.bd = bd;
 	}
 

@@ -2,27 +2,22 @@ package views;
 
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.TextField;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ComboBoxEditor;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
 import models.TipoChave;
 import models.TipoOperacaoBd;
 import models.BandeiraCartao;
-import models.Bd;
+import models.BD;
 import models.CartaoCredito;
 import models.CartaoDebito;
 import models.Dinheiro;
@@ -30,15 +25,18 @@ import models.FormaPagamento;
 import models.Pagamento;
 import models.PagamentoDAO;
 import models.Pix;
+import models.PlanoTreino;
+import models.PlanoTreinoDAO;
+
 
 public class GuiPagamento extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private Container contentPane;
-	private JLabel lbTitulo, lbValor, lbFormaPagamento, lbChavePix, lbBandeira, lbParcelas, lbTipoChave;
-	private JTextField tfValor, tfChavePix, tfParcelas;
+	private JLabel lbTitulo, lbValor, lbFormaPagamento, lbChavePix, lbBandeira, lbParcelas, lbTipoChave, lbIdPlano;
+	private JTextField tfValor, tfChavePix, tfParcelas, tfIdPlano;
 	private JComboBox cbFormaPagamento, cbTipoChave, cbBandeira;
-	private JButton btPagar, btSair, btLimpar;
+	private JButton btPagar, btSair, btLimpar, btBuscarPlano ;
 
     public GuiPagamento() {
         inicializarComponentes();
@@ -115,6 +113,19 @@ public class GuiPagamento extends JFrame {
         btSair.setBounds(278, 197, 100, 30);
         contentPane.add(btSair);
         
+        lbIdPlano = new JLabel("ID do Plano:");
+        lbIdPlano.setBounds(20, 30, 120, 20);
+        contentPane.add(lbIdPlano);
+        
+        tfIdPlano = new JTextField();
+        tfIdPlano.setBounds(150, 30, 100, 20);
+        contentPane.add(tfIdPlano);
+        
+
+        btBuscarPlano = new JButton("Buscar Plano");
+        btBuscarPlano.setBounds(260, 30, 100, 20);
+        contentPane.add(btBuscarPlano);
+        
         esconderTudo();
         
 	}
@@ -154,8 +165,40 @@ public class GuiPagamento extends JFrame {
                 }
             }
         });
+        
+        btBuscarPlano.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (tfIdPlano.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Informe o ID do plano!");
+                    return;
+                }
+
+                PlanoTreino plano = new PlanoTreino(null, null, null, null, null);
+                plano.setIdPlanoTreino(Integer.parseInt(tfIdPlano.getText()));
+
+                BD bd = new BD();
+                PlanoTreinoDAO dao = new PlanoTreinoDAO();
+                dao.setBd(bd);
+                dao.setPlanoTreino(plano);
+
+                if (bd.connect()) {
+                    boolean encontrou = dao.localizar();
+                    bd.close();
+
+                    if (encontrou) {
+                        float valor = plano.calcularValorTotal();
+                        tfValor.setText(String.valueOf(valor));
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Plano de treino não encontrado!");
+                    }
+                }
+            }
+        });
+        
     btPagar.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+        	
+        	
 
             if (tfValor.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Informe o valor!");
@@ -215,7 +258,7 @@ public class GuiPagamento extends JFrame {
             }
 
             // Salva no banco
-            Bd bd = new Bd();
+            BD bd = new BD();
             PagamentoDAO dao = new PagamentoDAO();
             dao.setBD(bd);
             dao.setPagamento(pagamento);
