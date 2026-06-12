@@ -26,5 +26,6 @@ replay_pid*
 *.classpath
 *.project
 *.settings/
+*bin/
 *.$Av2_atuali_3.0.drawio.bkp
 
