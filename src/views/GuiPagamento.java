@@ -173,7 +173,7 @@ public class GuiPagamento extends JFrame {
                     return;
                 }
 
-                PlanoTreino plano = new PlanoTreino(null, null, null, null, null);
+                PlanoTreino plano = new PlanoTreino();
                 plano.setIdPlanoTreino(Integer.parseInt(tfIdPlano.getText()));
 
                 BD bd = new BD();
@@ -183,10 +183,9 @@ public class GuiPagamento extends JFrame {
 
                 if (bd.connect()) {
                     boolean encontrou = dao.localizar();
-                    bd.close();
 
                     if (encontrou) {
-                        float valor = plano.calcularValorTotal();
+                        float valor = plano.calcularValorTotal();                        
                         tfValor.setText(String.valueOf(valor));
                     } else {
                         JOptionPane.showMessageDialog(null, "Plano de treino não encontrado!");

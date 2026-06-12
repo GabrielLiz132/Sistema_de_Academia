@@ -46,11 +46,9 @@ public class AlunoDAO implements OperacaoBd {
             aluno.setDataNascimento( resultSet.getDate(4) );
             aluno.setNumeroTelefone( resultSet.getString(5) );
   
-            bd.close();
             return true;
 		}
 		catch(SQLException erro) {
-            bd.close();
 			return false;
 		}
 	}
@@ -95,7 +93,6 @@ public class AlunoDAO implements OperacaoBd {
         catch (SQLException erro) {
             msg = "Falha na operação - " + erro.toString();
         }
-        bd.close();
         return msg;
     }
 }

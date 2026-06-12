@@ -1,9 +1,7 @@
 package test;
  
-import models.Bd;
-import models.LoginDAO;
-import models.TipoOperacaoBd;
-import models.Login;
+import models.*;
+
 
  
 public class MainTeste {
@@ -17,7 +15,7 @@ public class MainTeste {
         login.setSenhaHash("1234"); // vai ser convertido para hash automaticamente
  
         // 2. Cria o BD e o DAO
-        Bd bd = new Bd();
+        BD bd = new BD();
         LoginDAO loginDao = new LoginDAO();
         loginDao.setBD(bd);
         loginDao.setLogin(login);
@@ -40,5 +38,7 @@ public class MainTeste {
         // 5. Testa o validarLogin
         System.out.println("Login valido: " + loginBusca.validarLogin("admin", "1234"));
         System.out.println("Login invalido: " + loginBusca.validarLogin("admin", "senhaerrada"));
+        
+        System.out.println(bd.connection);
     }
 }

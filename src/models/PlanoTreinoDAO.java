@@ -15,6 +15,8 @@ public class PlanoTreinoDAO implements OperacaoBd {
 	public PlanoTreinoDAO() {
 		this.bd = null;
 		this.planoTreino = null;
+		bd = new BD();
+		bd.connect();
 	}
 
 	public void setBd(BD bd) {
@@ -35,7 +37,6 @@ public class PlanoTreinoDAO implements OperacaoBd {
 		sql = "SELECT * FROM PlanoTreino WHERE idPlanoTreino = ?";
 
 		try {
-
 			statement = bd.connection.prepareStatement(sql);
 		    statement.setInt(1, planoTreino.getIdPlanoTreino());
 
@@ -73,6 +74,9 @@ public class PlanoTreinoDAO implements OperacaoBd {
 
 		    sql = "SELECT * FROM ExerciciosPlanoTreino WHERE idPlanoTreino = ?";
 
+		    System.out.println("bd = " + bd);
+		    System.out.println("connection = " + bd.connection);
+		    
 		    statement = bd.connection.prepareStatement(sql);
 		    statement.setInt(1, planoTreino.getIdPlanoTreino());
 
