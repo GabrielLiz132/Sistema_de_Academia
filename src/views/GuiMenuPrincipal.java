@@ -64,7 +64,7 @@ public class GuiMenuPrincipal extends JFrame {
         
         
         miSobre = new JMenuItem("Sobre...");
-
+ 
         mnAjuda.add(miSobre);
         
         setJMenuBar(mnBarra);
@@ -90,8 +90,8 @@ public class GuiMenuPrincipal extends JFrame {
         miProfessor.addActionListener(
                 new ActionListener() {
                 	public void actionPerformed( ActionEvent e) {
-                		// aqui vai o codigo para chamar o exemplo 8.3
-                		JOptionPane.showMessageDialog(null, "Ação de cadastro de Pessoa professor",
+                		GuiCadastroProfessor.abrir();
+                		JOptionPane.showMessageDialog(null, "Ação de cadastro de professor",
 								"Informação", JOptionPane.QUESTION_MESSAGE );
                 	}
                 });
@@ -108,7 +108,7 @@ public class GuiMenuPrincipal extends JFrame {
         miCadastroPlanoTreino.addActionListener(
                 new ActionListener() {
                 	public void actionPerformed( ActionEvent e) {
-                		// aqui vai o codigo para chamar o exemplo 8.3
+                		GuiCadastroPlanoTreino.abrir();
                 		JOptionPane.showMessageDialog(null, "Ação de cadastro de plano de treino",
 								"Informação", JOptionPane.WARNING_MESSAGE );
                 	}

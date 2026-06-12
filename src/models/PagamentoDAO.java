@@ -2,7 +2,7 @@ package models;
 
 import java.sql.*;
 
-public class PagamentoDAO implements OperacaoBD {
+public class PagamentoDAO implements OperacaoBd {
 	 
     private Bd bd;
     private Pagamento pagamento;

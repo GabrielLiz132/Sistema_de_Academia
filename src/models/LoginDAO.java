@@ -3,7 +3,7 @@ package models;
 import java.sql.*;
 
 
-public class LoginDAO implements OperacaoBD {
+public class LoginDAO implements OperacaoBd {
 	 
     private Bd bd;
     private Login login;
