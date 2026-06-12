@@ -31,6 +31,7 @@ public class PlanoTreinoDAO implements OperacaoBD {
 
 	@Override
 	public boolean localizar() {
+		if (!bd.connect()) return false;
 		sql = "SELECT * FROM PlanoTreino WHERE idPlanoTreino = ?";
 
 		try {
@@ -101,12 +102,12 @@ public class PlanoTreinoDAO implements OperacaoBD {
 		    }
 
 		    planoTreino.setQuantidadeExercicios(quantidades);
-
+		    bd.close();
 		    return true;
 
 		}
 		catch (SQLException erro) {
-
+			bd.close();
 			return false;
 
 		}
@@ -220,13 +221,14 @@ public class PlanoTreinoDAO implements OperacaoBD {
 	@Override
 	public String atualizar(TipoOperacaoBd operacao) {
 		// TODO Auto-generated method stub
+		if (!bd.connect()) return "Falha ao conectar";
 		msg = "Operação realizada com sucesso!";
         try {
             if (operacao == TipoOperacaoBd.INCLUSAO) {
             	
             	// Insere PlanoTreino
             	
-                sql = "INSERT INTO PlanoTreino(matriculaAluno, cpfProfessor, dataDeCriacao)) VALUES (?,?,?)";
+                sql = "INSERT INTO PlanoTreino(matriculaAluno, cpfProfessor, dataDeCriacao) VALUES (?,?,?)";
                 statement = bd.connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
                 statement.setInt(1, planoTreino.getAluno().getMatricula());
@@ -322,7 +324,7 @@ public class PlanoTreinoDAO implements OperacaoBD {
         catch (SQLException erro) {
             msg = "Falha na operação - " + erro.toString();
         }
-
+        bd.close();
         return msg;
     }
 }        

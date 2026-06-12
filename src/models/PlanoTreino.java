@@ -11,6 +11,9 @@ import java.util.Date;
 	    private Exercicios[] exercicios;
 	    private int[] quantidadeExercicios;
 
+	    public PlanoTreino() {
+	    	
+	    }
 	    public PlanoTreino(Aluno aluno, Professor professorResponsavel, Date dataDeCriacao, Exercicios[] exercicios, int[] quantidadeExercicios) {
 	        this.aluno = aluno;
 	        this.professorResponsavel = professorResponsavel;
