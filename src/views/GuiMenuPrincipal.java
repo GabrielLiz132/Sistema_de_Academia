@@ -117,7 +117,7 @@ public class GuiMenuPrincipal extends JFrame {
         miConsultaPlanoTreino.addActionListener(
                 new ActionListener() {
                 	public void actionPerformed( ActionEvent e) {
-                		// aqui vai o codigo para chamar o exemplo 8.3
+                		GuiPlanoTreinoConsulta.abrir();
                 		JOptionPane.showMessageDialog(null, "Ação de consulta de plano de treino",
 								"Informação", JOptionPane.WARNING_MESSAGE );
                 	}
