@@ -87,7 +87,7 @@ public class PlanoTreinoDAO implements OperacaoBd {
 		        String nomeExercicio = resultSet.getString(3);
 		        int quantidade = resultSet.getInt(4);
 
-		        Exercicios exercicio = criarExercicio(nomeExercicio);
+		        Exercicios exercicio = obterExercicio(nomeExercicio);
 
 		        listaExercicios.add(exercicio);
 		        listaQuantidades.add(quantidade);
@@ -117,7 +117,7 @@ public class PlanoTreinoDAO implements OperacaoBd {
 		}
 	}
 
-	private Exercicios criarExercicio(String nomeExercicio) {
+	private Exercicios obterExercicio(String nomeExercicio) {
 	    switch(nomeExercicio) {
 	        // Exercícios com repetição
 
