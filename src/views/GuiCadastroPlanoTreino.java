@@ -133,7 +133,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		
 		chckbxSupinoRetoComBarra = new JCheckBox("SupinoRetoComBarra");
 		chckbxSupinoRetoComBarra.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxSupinoRetoComBarra.setBounds(39, 213, 146, 23);
+		chckbxSupinoRetoComBarra.setBounds(39, 213, 156, 23);
 		getContentPane().add(chckbxSupinoRetoComBarra);
 		
 		spSupinoRetoComBarra = new JSpinner();
@@ -143,7 +143,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		
 		chckbxSupinoRetoComHalter = new JCheckBox("SupinoRetoComHalter");
 		chckbxSupinoRetoComHalter.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxSupinoRetoComHalter.setBounds(39, 239, 146, 23);
+		chckbxSupinoRetoComHalter.setBounds(39, 239, 152, 23);
 		getContentPane().add(chckbxSupinoRetoComHalter);
 		
 		spSupinoRetoComHalter = new JSpinner();
@@ -153,7 +153,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		
 		chckbxSupinoInclinado = new JCheckBox("SupinoInclinado");
 		chckbxSupinoInclinado.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxSupinoInclinado.setBounds(39, 265, 146, 23);
+		chckbxSupinoInclinado.setBounds(39, 265, 152, 23);
 		getContentPane().add(chckbxSupinoInclinado);
 		
 		spSupinoInclinado = new JSpinner();
@@ -212,8 +212,8 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		getContentPane().add(spTricepsNaPolia);
 		
 		chckbxDesenvolvimentoComHalter = new JCheckBox("DesenvolvimentoComHalter");
-		chckbxDesenvolvimentoComHalter.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxDesenvolvimentoComHalter.setBounds(39, 379, 157, 23);
+		chckbxDesenvolvimentoComHalter.setHorizontalAlignment(SwingConstants.CENTER);
+		chckbxDesenvolvimentoComHalter.setBounds(19, 379, 176, 23);
 		getContentPane().add(chckbxDesenvolvimentoComHalter);
 		
 		spDesenvolvimentoComHalter = new JSpinner();
