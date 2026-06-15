@@ -6,11 +6,11 @@ public class ProfessorDAO implements OperacaoBd {
 	private Bd bd;
 	private Professor professor;
 	
-	 private PreparedStatement statement;
-	 private ResultSet resultSet;
+	private PreparedStatement statement;
+	private ResultSet resultSet;
 
-	 private String sql, msg;
-	
+	private String sql, msg;
+		
 	public ProfessorDAO() {
 		this.bd = null;
 		this.professor = null;

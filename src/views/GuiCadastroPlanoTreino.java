@@ -16,9 +16,6 @@ public class GuiCadastroPlanoTreino extends JFrame{
     private Container contentPane;
 	
 	private JTextField tfMatriculaDoAluno, tfCpfDoProfessor, tfDataCriacaoTreino, tfIdPlanoTreino;
-	private JLabel lblMatriculaDoAluno, lblExerciciosDePeito, lblExerciciosDeBiceps, lblExerciciosDeTriceps, lblExerciciosDeOmbro, lblIdPlanoTreino;
-	private JLabel lblExerciciosDeQuadriceps, lblExerciciosDeCostas, lblExerciciosDeAbdomen, lblExerciciosDePosterior, lblGluteos, lbCpfDoProfessor;
-	private JLabel lblDataDeCriao, lblPanturrilha, lbTitulo, lblCardio;
 	private JCheckBox chckbxSupinoRetoComBarra, chckbxSupinoRetoComHalter, chckbxSupinoInclinado, chckbxBicepsRoscaComHalter;
 	private JCheckBox chckbxBicepsRoscaNaPolia, chckbxTricepsComHalter, chckbxTricepsTesta, chckbxTricepsNaPolia;
 	private JCheckBox chckbxElevacaoFrontal, chckbxElevacaoLateral, chckbxDesenvolvimentoComHalter, chckbxRemadaSerrote, chckbxRemadaCurvadaComHalter;
@@ -45,23 +42,23 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		contentPane = getContentPane();
         contentPane.setLayout(null);
         
-		lbTitulo = new JLabel("Cadastro Plano de Treino");
+		JLabel lbTitulo = new JLabel("Cadastro Plano de Treino");
 		lbTitulo.setBounds(0, 31, 958, 25);
 		lbTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		lbTitulo.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		getContentPane().add(lbTitulo);
 		
-		lblMatriculaDoAluno = new JLabel("Matricula do Aluno:");
+		JLabel lblMatriculaDoAluno = new JLabel("Matricula do Aluno:");
 		lblMatriculaDoAluno.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblMatriculaDoAluno.setBounds(29, 83, 113, 25);
 		getContentPane().add(lblMatriculaDoAluno);
 		
-		lbCpfDoProfessor = new JLabel("CPF do Professor:");
+		JLabel lbCpfDoProfessor = new JLabel("CPF do Professor:");
 		lbCpfDoProfessor.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbCpfDoProfessor.setBounds(29, 119, 113, 25);
 		getContentPane().add(lbCpfDoProfessor);
 		
-		lblDataDeCriao = new JLabel("Data de criação do treino (dd/MM/yyyy):");
+		JLabel lblDataDeCriao = new JLabel("Data de criação do treino (dd/MM/yyyy):");
 		lblDataDeCriao.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblDataDeCriao.setBounds(458, 83, 240, 25);
 		getContentPane().add(lblDataDeCriao);
@@ -81,104 +78,104 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		getContentPane().add(tfDataCriacaoTreino);
 		tfDataCriacaoTreino.setColumns(10); 
 		
-		lblExerciciosDePeito = new JLabel("Exercicios de Peito");
+		JLabel lblExerciciosDePeito = new JLabel("Exercicios de Peito");
 		lblExerciciosDePeito.setHorizontalAlignment(SwingConstants.CENTER);
-		lblExerciciosDePeito.setBounds(29, 181, 156, 25);
+		lblExerciciosDePeito.setBounds(0, 181, 156, 25);
 		getContentPane().add(lblExerciciosDePeito);
 		
-		lblExerciciosDeBiceps = new JLabel("Exercicios de Biceps");
+		JLabel lblExerciciosDeBiceps = new JLabel("Exercicios de Biceps");
 		lblExerciciosDeBiceps.setHorizontalAlignment(SwingConstants.CENTER);
 		lblExerciciosDeBiceps.setBounds(255, 181, 146, 25);
 		getContentPane().add(lblExerciciosDeBiceps);
 		
-		lblExerciciosDeTriceps = new JLabel("Exercicios de Triceps");
+		JLabel lblExerciciosDeTriceps = new JLabel("Exercicios de Triceps");
 		lblExerciciosDeTriceps.setHorizontalAlignment(SwingConstants.CENTER);
 		lblExerciciosDeTriceps.setBounds(495, 181, 156, 25);
 		getContentPane().add(lblExerciciosDeTriceps);
 		
-		lblExerciciosDeOmbro = new JLabel("Exercicios de Ombro");
+		JLabel lblExerciciosDeOmbro = new JLabel("Exercicios de Ombro");
 		lblExerciciosDeOmbro.setHorizontalAlignment(SwingConstants.CENTER);
-		lblExerciciosDeOmbro.setBounds(29, 295, 156, 25);
+		lblExerciciosDeOmbro.setBounds(0, 295, 156, 25);
 		getContentPane().add(lblExerciciosDeOmbro);
 		
-		lblExerciciosDeCostas = new JLabel("Exercicios de Costas");
+		JLabel lblExerciciosDeCostas = new JLabel("Exercicios de Costas");
 		lblExerciciosDeCostas.setHorizontalAlignment(SwingConstants.CENTER);
 		lblExerciciosDeCostas.setBounds(255, 295, 156, 25);
 		getContentPane().add(lblExerciciosDeCostas);
 		
-		lblExerciciosDeAbdomen = new JLabel("Exercicios de Abdomen");
+		JLabel lblExerciciosDeAbdomen = new JLabel("Exercicios de Abdomen");
 		lblExerciciosDeAbdomen.setHorizontalAlignment(SwingConstants.CENTER);
 		lblExerciciosDeAbdomen.setBounds(495, 295, 167, 25);
 		getContentPane().add(lblExerciciosDeAbdomen);
 		
-		lblExerciciosDeQuadriceps = new JLabel("Exercicios de Quadriceps");
+		JLabel lblExerciciosDeQuadriceps = new JLabel("Exercicios de Quadriceps");
 		lblExerciciosDeQuadriceps.setHorizontalAlignment(SwingConstants.CENTER);
-		lblExerciciosDeQuadriceps.setBounds(24, 409, 167, 25);
+		lblExerciciosDeQuadriceps.setBounds(0, 409, 167, 25);
 		getContentPane().add(lblExerciciosDeQuadriceps);
 		
-		lblExerciciosDePosterior = new JLabel("Exercicios de Posterior de Coxa");
+		JLabel lblExerciciosDePosterior = new JLabel("Exercicios de Posterior de Coxa");
 		lblExerciciosDePosterior.setHorizontalAlignment(SwingConstants.CENTER);
 		lblExerciciosDePosterior.setBounds(246, 409, 195, 25);
 		getContentPane().add(lblExerciciosDePosterior);
 		
-		lblGluteos = new JLabel("Gluteos");
+		JLabel lblGluteos = new JLabel("Gluteos");
 		lblGluteos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGluteos.setBounds(493, 409, 158, 25);
 		getContentPane().add(lblGluteos);
 		
-		lblPanturrilha = new JLabel("Panturrilha");
+		JLabel lblPanturrilha = new JLabel("Panturrilha");
 		lblPanturrilha.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPanturrilha.setBounds(721, 181, 146, 25);
 		getContentPane().add(lblPanturrilha);
 		
 		chckbxSupinoRetoComBarra = new JCheckBox("SupinoRetoComBarra");
 		chckbxSupinoRetoComBarra.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxSupinoRetoComBarra.setBounds(39, 213, 156, 23);
+		chckbxSupinoRetoComBarra.setBounds(19, 212, 172, 23);
 		getContentPane().add(chckbxSupinoRetoComBarra);
 		
 		spSupinoRetoComBarra = new JSpinner();
 		spSupinoRetoComBarra.setToolTipText("Quantidade de Repetiçoes");
-		spSupinoRetoComBarra.setBounds(201, 213, 44, 20);
+		spSupinoRetoComBarra.setBounds(197, 218, 44, 20);
 		getContentPane().add(spSupinoRetoComBarra);
 		
 		chckbxSupinoRetoComHalter = new JCheckBox("SupinoRetoComHalter");
 		chckbxSupinoRetoComHalter.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxSupinoRetoComHalter.setBounds(39, 239, 152, 23);
+		chckbxSupinoRetoComHalter.setBounds(19, 238, 172, 23);
 		getContentPane().add(chckbxSupinoRetoComHalter);
 		
 		spSupinoRetoComHalter = new JSpinner();
 		spSupinoRetoComHalter.setToolTipText("Quantidade de Repetiçoes");
-		spSupinoRetoComHalter.setBounds(201, 239, 44, 20);
+		spSupinoRetoComHalter.setBounds(197, 244, 44, 20);
 		getContentPane().add(spSupinoRetoComHalter);
 		
 		chckbxSupinoInclinado = new JCheckBox("SupinoInclinado");
 		chckbxSupinoInclinado.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxSupinoInclinado.setBounds(39, 265, 152, 23);
+		chckbxSupinoInclinado.setBounds(19, 265, 172, 23);
 		getContentPane().add(chckbxSupinoInclinado);
 		
 		spSupinoInclinado = new JSpinner();
 		spSupinoInclinado.setToolTipText("Quantidade de Repetiçoes");
-		spSupinoInclinado.setBounds(201, 265, 44, 20);
+		spSupinoInclinado.setBounds(197, 270, 44, 20);
 		getContentPane().add(spSupinoInclinado);
 		
 		chckbxBicepsRoscaComHalter = new JCheckBox("BicepsRoscaComHalter");
 		chckbxBicepsRoscaComHalter.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxBicepsRoscaComHalter.setBounds(265, 213, 146, 23);
+		chckbxBicepsRoscaComHalter.setBounds(265, 213, 163, 23);
 		getContentPane().add(chckbxBicepsRoscaComHalter);
 		
 		chckbxBicepsRoscaNaPolia = new JCheckBox("BicepsRoscaNaPolia");
 		chckbxBicepsRoscaNaPolia.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxBicepsRoscaNaPolia.setBounds(265, 239, 146, 23);
+		chckbxBicepsRoscaNaPolia.setBounds(265, 239, 163, 23);
 		getContentPane().add(chckbxBicepsRoscaNaPolia);
 		
 		spBicepsRoscaNaPolia = new JSpinner();
 		spBicepsRoscaNaPolia.setToolTipText("Quantidade de Repetiçoes");
-		spBicepsRoscaNaPolia.setBounds(428, 239, 44, 20);
+		spBicepsRoscaNaPolia.setBounds(434, 238, 44, 20);
 		getContentPane().add(spBicepsRoscaNaPolia);
 		
 		spBicepsRoscaComHalter = new JSpinner();
 		spBicepsRoscaComHalter.setToolTipText("Quantidade de Repetiçoes");
-		spBicepsRoscaComHalter.setBounds(428, 213, 44, 20);
+		spBicepsRoscaComHalter.setBounds(434, 212, 44, 20);
 		getContentPane().add(spBicepsRoscaComHalter);
 		
 		chckbxTricepsComHalter = new JCheckBox("TricepsComHalter");
@@ -213,32 +210,32 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		
 		chckbxDesenvolvimentoComHalter = new JCheckBox("DesenvolvimentoComHalter");
 		chckbxDesenvolvimentoComHalter.setHorizontalAlignment(SwingConstants.CENTER);
-		chckbxDesenvolvimentoComHalter.setBounds(19, 379, 176, 23);
+		chckbxDesenvolvimentoComHalter.setBounds(6, 379, 189, 23);
 		getContentPane().add(chckbxDesenvolvimentoComHalter);
 		
 		spDesenvolvimentoComHalter = new JSpinner();
 		spDesenvolvimentoComHalter.setToolTipText("Quantidade de Repetiçoes");
-		spDesenvolvimentoComHalter.setBounds(201, 379, 44, 20);
+		spDesenvolvimentoComHalter.setBounds(197, 384, 44, 20);
 		getContentPane().add(spDesenvolvimentoComHalter);
 		
 		spElevacaoLateral = new JSpinner();
 		spElevacaoLateral.setToolTipText("Quantidade de Repetiçoes");
-		spElevacaoLateral.setBounds(201, 354, 44, 20);
+		spElevacaoLateral.setBounds(197, 359, 44, 20);
 		getContentPane().add(spElevacaoLateral);
 		
 		chckbxElevacaoLateral = new JCheckBox("ElevacaoLateral");
 		chckbxElevacaoLateral.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxElevacaoLateral.setBounds(39, 353, 146, 23);
+		chckbxElevacaoLateral.setBounds(21, 353, 170, 23);
 		getContentPane().add(chckbxElevacaoLateral);
 		
 		chckbxElevacaoFrontal = new JCheckBox("ElevacaoFrontal");
 		chckbxElevacaoFrontal.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxElevacaoFrontal.setBounds(39, 327, 146, 23);
+		chckbxElevacaoFrontal.setBounds(21, 327, 170, 23);
 		getContentPane().add(chckbxElevacaoFrontal);
 		
 		spElevacaoFrontal = new JSpinner();
 		spElevacaoFrontal.setToolTipText("Quantidade de Repetiçoes");
-		spElevacaoFrontal.setBounds(201, 327, 44, 20);
+		spElevacaoFrontal.setBounds(197, 332, 44, 20);
 		getContentPane().add(spElevacaoFrontal);
 		
 		chckbxRemadaSerrote = new JCheckBox("RemadaSerrote");
@@ -248,17 +245,17 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		
 		chckbxRemadaCurvadaComHalter = new JCheckBox("RemadaCurvadaComHalter");
 		chckbxRemadaCurvadaComHalter.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxRemadaCurvadaComHalter.setBounds(265, 353, 157, 23);
+		chckbxRemadaCurvadaComHalter.setBounds(255, 353, 180, 23);
 		getContentPane().add(chckbxRemadaCurvadaComHalter);
 		
 		spRemadaCurvadaComHalter = new JSpinner();
 		spRemadaCurvadaComHalter.setToolTipText("Quantidade de Repetiçoes");
-		spRemadaCurvadaComHalter.setBounds(428, 353, 44, 20);
+		spRemadaCurvadaComHalter.setBounds(434, 352, 44, 20);
 		getContentPane().add(spRemadaCurvadaComHalter);
 		
 		spRemadaSerrote = new JSpinner();
 		spRemadaSerrote.setToolTipText("Quantidade de Repetiçoes");
-		spRemadaSerrote.setBounds(428, 328, 44, 20);
+		spRemadaSerrote.setBounds(434, 327, 44, 20);
 		getContentPane().add(spRemadaSerrote);
 		
 		chckbxPranchaFrontal = new JCheckBox("PranchaFrontal (segundos) ");
@@ -303,32 +300,32 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		
 		chckbxAgachamentoLivre = new JCheckBox("AgachamentoLivre");
 		chckbxAgachamentoLivre.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxAgachamentoLivre.setBounds(39, 491, 157, 23);
+		chckbxAgachamentoLivre.setBounds(20, 493, 171, 23);
 		getContentPane().add(chckbxAgachamentoLivre);
 		
 		chckbxAgachamentoNoHack = new JCheckBox("AgachamentoNoHack");
 		chckbxAgachamentoNoHack.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxAgachamentoNoHack.setBounds(39, 465, 146, 23);
+		chckbxAgachamentoNoHack.setBounds(20, 467, 171, 23);
 		getContentPane().add(chckbxAgachamentoNoHack);
 		
 		chckbxLegPress45 = new JCheckBox("LegPress45");
 		chckbxLegPress45.setHorizontalAlignment(SwingConstants.LEFT);
-		chckbxLegPress45.setBounds(39, 439, 146, 23);
+		chckbxLegPress45.setBounds(20, 441, 171, 23);
 		getContentPane().add(chckbxLegPress45);
 		
 		spLegPress45 = new JSpinner();
 		spLegPress45.setToolTipText("Quantidade de Repetiçoes");
-		spLegPress45.setBounds(201, 439, 44, 20);
+		spLegPress45.setBounds(197, 444, 44, 20);
 		getContentPane().add(spLegPress45);
 		
 		spAgachamentoNoHack = new JSpinner();
 		spAgachamentoNoHack.setToolTipText("Quantidade de Repetiçoes");
-		spAgachamentoNoHack.setBounds(201, 466, 44, 20);
+		spAgachamentoNoHack.setBounds(197, 471, 44, 20);
 		getContentPane().add(spAgachamentoNoHack);
 		
 		spAgachamentoLivre = new JSpinner();
 		spAgachamentoLivre.setToolTipText("Quantidade de Repetiçoes");
-		spAgachamentoLivre.setBounds(201, 491, 44, 20);
+		spAgachamentoLivre.setBounds(197, 496, 44, 20);
 		getContentPane().add(spAgachamentoLivre);
 		
 		chckbxStiff = new JCheckBox("Stiff");
@@ -343,12 +340,12 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		
 		spStiff = new JSpinner();
 		spStiff.setToolTipText("Quantidade de Repetiçoes");
-		spStiff.setBounds(428, 465, 44, 20);
+		spStiff.setBounds(434, 464, 44, 20);
 		getContentPane().add(spStiff);
 		
 		spMesaFlexora = new JSpinner();
 		spMesaFlexora.setToolTipText("Quantidade de Repetiçoes");
-		spMesaFlexora.setBounds(428, 440, 44, 20);
+		spMesaFlexora.setBounds(434, 439, 44, 20);
 		getContentPane().add(spMesaFlexora);
 		
 		chckbxElevacaoPelvica = new JCheckBox("ElevacaoPelvica");
@@ -371,7 +368,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		spElevacaoPelvica.setBounds(666, 440, 45, 20);
 		getContentPane().add(spElevacaoPelvica);
 		 
-		lblCardio = new JLabel("Cardio (quantidade em segundos)");
+		JLabel lblCardio = new JLabel("Cardio (quantidade em segundos)");
 		lblCardio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCardio.setBounds(721, 295, 195, 25);
 		getContentPane().add(lblCardio);
@@ -457,7 +454,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		getContentPane().add(tfIdPlanoTreino);
 		tfIdPlanoTreino.setColumns(10);
 		
-		lblIdPlanoTreino = new JLabel("Id do Plano de Treino: ");
+		JLabel lblIdPlanoTreino = new JLabel("Id do Plano de Treino: ");
 		lblIdPlanoTreino.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblIdPlanoTreino.setBounds(571, 121, 127, 20);
 		getContentPane().add(lblIdPlanoTreino);
@@ -529,19 +526,13 @@ public class GuiCadastroPlanoTreino extends JFrame{
         });
     }
  
-	private void adicionarExercicio(
-	        JCheckBox checkBox,
-	        JSpinner spinner,
-	        Exercicios exercicio,
-	        ArrayList<Exercicios> listaExercicios,
-	        ArrayList<Integer> listaQuantidades) {
+	private void adicionarExercicio(JCheckBox checkBox, JSpinner spinner, Exercicios exercicio, ArrayList<Exercicios> listaExercicios, ArrayList<Integer> listaQuantidades) {
 
 	    if (checkBox.isSelected()) {
 
 	        listaExercicios.add(exercicio);
 
-	        listaQuantidades.add(
-	                (Integer) spinner.getValue());
+	        listaQuantidades.add( (Integer) spinner.getValue());
 	    }
 	}
 	
@@ -557,27 +548,22 @@ public class GuiCadastroPlanoTreino extends JFrame{
 	    	
 	        // Cria o Aluno e define a matrícula informada
 	        Aluno aluno = new Aluno();
-	        aluno.setMatricula(
-	                Integer.parseInt(tfMatriculaDoAluno.getText()));
+	        aluno.setMatricula(Integer.parseInt(tfMatriculaDoAluno.getText()));
 
 	        // Cria o Professor e define o CPF informado
 	        Professor professor = new Professor();
-	        professor.setCpf(
-	                tfCpfDoProfessor.getText());
+	        professor.setCpf(tfCpfDoProfessor.getText());
 
 	        // Converte a data digitada para Date
-	        SimpleDateFormat sdf =
-	                new SimpleDateFormat("dd/MM/yyyy");
+	        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-	        Date dataCriacao =
-	                sdf.parse(tfDataCriacaoTreino.getText());
+	        Date dataCriacao = sdf.parse(tfDataCriacaoTreino.getText());
 
 	        // Listas temporárias para armazenar exercícios e quantidades
-	        ArrayList<Exercicios> listaExercicios =
-	                new ArrayList<>();
+	        
+	        ArrayList<Exercicios> listaExercicios = new ArrayList<>();
 
-	        ArrayList<Integer> listaQuantidades =
-	                new ArrayList<>();
+	        ArrayList<Integer> listaQuantidades = new ArrayList<>();
 
 		     // Exercícios de Peito
 	
@@ -656,17 +642,14 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		     adicionarExercicio(chckbxPularCorda, spPularCorda, new PularCorda(), listaExercicios, listaQuantidades);
 
 	        // Converte ArrayList para array de Exercicios
-	        Exercicios[] exercicios =
-	                listaExercicios.toArray(
-	                        new Exercicios[0]);
+	        Exercicios[] exercicios = listaExercicios.toArray( new Exercicios[0]);
 
 	        // Converte ArrayList<Integer> para int[]
-	        int[] quantidades =
-	                new int[listaQuantidades.size()];
+	        int[] quantidades = new int[listaQuantidades.size()];
 
 	        for (int i = 0; i < listaQuantidades.size(); i++) {
-	            quantidades[i] =
-	                    listaQuantidades.get(i);
+	        	
+	            quantidades[i] = listaQuantidades.get(i);
 	        }
 
 	        // Preenche o PlanoTreino
@@ -680,10 +663,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
 	    }
 	    catch (Exception erro) {
 
-	        JOptionPane.showMessageDialog(
-	                null,
-	                "Erro ao preencher plano de treino: "
-	                        + erro.getMessage());
+	        JOptionPane.showMessageDialog(null,"Erro ao preencher plano de treino: " + erro.getMessage());
 
 	        return null;
 	    }
