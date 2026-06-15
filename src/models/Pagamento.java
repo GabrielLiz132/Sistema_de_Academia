@@ -8,6 +8,9 @@ public class Pagamento {
 
  
     public Pagamento() {
+    	formaPagamento = null;
+    	valor = 0;
+    	id = 0;
     }
  
     public FormaPagamento[] getFormaPagamento() {

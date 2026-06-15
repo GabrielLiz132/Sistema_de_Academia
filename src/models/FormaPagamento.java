@@ -4,6 +4,12 @@ public abstract class FormaPagamento {
 	 
     private String descricao;
     private int id;
+    
+
+	public FormaPagamento() {
+        descricao = null;
+        id = 0;
+    }
 
     public int getId() {
 		return id;
@@ -13,10 +19,6 @@ public abstract class FormaPagamento {
 		this.id = id;
 	}
 
-	public FormaPagamento() {
-        this.descricao = null;
-    }
- 
     public String getDescricao() {
         return descricao;
     }

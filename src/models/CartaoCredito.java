@@ -6,7 +6,7 @@ public class CartaoCredito extends Cartao {
     public CartaoCredito() {
         super();
         setDescricao("Cartão de Crédito");
-        this.quantidadeParcela = 1;
+        quantidadeParcela = 1;
     }
  
     public byte getQuantidadeParcela() {

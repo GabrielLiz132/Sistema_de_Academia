@@ -8,6 +8,8 @@ public class Pix extends FormaPagamento {
     public Pix() {
     	super();
     	setDescricao("Pix");
+    	chave = null;
+    	tipo = null;
     }
  
     public String getChave() {

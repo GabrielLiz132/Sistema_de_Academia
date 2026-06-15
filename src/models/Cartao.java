@@ -6,7 +6,7 @@ public abstract class Cartao extends FormaPagamento {
  
     public Cartao() {
         super();
-        this.bandeira = null;
+        bandeira = null;
     }
  
     public BandeiraCartao getBandeira() {

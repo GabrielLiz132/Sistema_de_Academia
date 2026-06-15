@@ -5,7 +5,7 @@ CREATE TABLE aluno (
     nome VARCHAR(100),
     cpf VARCHAR(14),
     dataNascimento DATE,
-    numeroTelefone varchar(14)
+    numeroTelefone varchar(16)
 );
 
 CREATE TABLE pagamento (
