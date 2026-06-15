@@ -18,7 +18,6 @@ public class GuiCadastroProfessor extends JFrame{
     private Container contentPane;
 	
 	private JTextField tfNome, tfCpf, tfDataNascimento, tfNumeroTelefone, tfCref, tfEspecialidade;
-	private JLabel lbNome, lbCpf, lbDataNascimento, lbNumeroTelefone, lbCref, lbEspecialidade;
 	private JButton btSalvar, btBuscar, btAlterar, btExcluir, btLimpar;
 	
 	public GuiCadastroProfessor() {
@@ -40,7 +39,7 @@ public class GuiCadastroProfessor extends JFrame{
 		lbCadastroProfessor.setHorizontalAlignment(SwingConstants.CENTER);
 		getContentPane().add(lbCadastroProfessor);
 		
-		lbNome = new JLabel("Nome: ");
+		JLabel lbNome = new JLabel("Nome: ");
 		lbNome.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbNome.setBounds(20, 53, 134, 20);
 		getContentPane().add(lbNome);
@@ -50,7 +49,7 @@ public class GuiCadastroProfessor extends JFrame{
 		getContentPane().add(tfNome);
 		tfNome.setColumns(10);
 		
-		lbCpf = new JLabel("CPF: ");
+		JLabel lbCpf = new JLabel("CPF: ");
 		lbCpf.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbCpf.setBounds(20, 84, 134, 20);
 		getContentPane().add(lbCpf);
@@ -70,17 +69,17 @@ public class GuiCadastroProfessor extends JFrame{
 		getContentPane().add(tfNumeroTelefone);
 		tfNumeroTelefone.setColumns(10);
 		
-		lbDataNascimento = new JLabel("Data Nasc. (dd/MM/yyyy):");
+		JLabel lbDataNascimento = new JLabel("Data Nasc. (dd/MM/yyyy):");
 		lbDataNascimento.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbDataNascimento.setBounds(10, 115, 144, 20);
 		getContentPane().add(lbDataNascimento);
 		
-		lbNumeroTelefone = new JLabel("Telefone: ");
+		JLabel lbNumeroTelefone = new JLabel("Telefone: ");
 		lbNumeroTelefone.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbNumeroTelefone.setBounds(20, 146, 134, 20);
 		getContentPane().add(lbNumeroTelefone);
 		
-		lbCref = new JLabel("CREF: ");
+		JLabel lbCref = new JLabel("CREF: ");
 		lbCref.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbCref.setBounds(10, 177, 144, 20);
 		getContentPane().add(lbCref);
@@ -95,7 +94,7 @@ public class GuiCadastroProfessor extends JFrame{
 		tfEspecialidade.setBounds(164, 208, 163, 20);
 		getContentPane().add(tfEspecialidade);
 		
-		lbEspecialidade = new JLabel("Especialidade: ");
+		JLabel lbEspecialidade = new JLabel("Especialidade: ");
 		lbEspecialidade.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbEspecialidade.setBounds(10, 208, 144, 20);
 		getContentPane().add(lbEspecialidade);

@@ -16,9 +16,7 @@ public class GuiPlanoTreinoConsulta extends JFrame {
     private Container contentPane;
  
     private JTable tabelaExercicios;
-    private JLabel lblTitulo;
-    private JLabel lblNumeroIdPLanoTreino;
-    private JTextField tfNumeroIdPLanoTreino;
+    private JTextField tfIdPLanoTreino;
     private JButton btConsultarPlano;
     private JLabel lblValorTotal;
  
@@ -35,21 +33,21 @@ public class GuiPlanoTreinoConsulta extends JFrame {
         contentPane = getContentPane();
         contentPane.setLayout(null);
  
-        lblTitulo = new JLabel("Consulta do seu Plano de Treino");
+        JLabel lblTitulo = new JLabel("Consulta do seu Plano de Treino");
         lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 20));
         lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitulo.setBounds(0, 17, 553, 47);
         contentPane.add(lblTitulo);
  
-        lblNumeroIdPLanoTreino = new JLabel("Numero do ID do Plano de Treino: ");
+        JLabel lblNumeroIdPLanoTreino = new JLabel("Numero do ID do Plano de Treino: ");
         lblNumeroIdPLanoTreino.setHorizontalAlignment(SwingConstants.RIGHT);
-        lblNumeroIdPLanoTreino.setBounds(25, 76, 185, 24);
+        lblNumeroIdPLanoTreino.setBounds(10, 76, 200, 24);
         contentPane.add(lblNumeroIdPLanoTreino);
  
-        tfNumeroIdPLanoTreino = new JTextField();
-        tfNumeroIdPLanoTreino.setBounds(220, 78, 118, 20);
-        contentPane.add(tfNumeroIdPLanoTreino);
-        tfNumeroIdPLanoTreino.setColumns(10);
+        tfIdPLanoTreino = new JTextField();
+        tfIdPLanoTreino.setBounds(220, 78, 118, 20);
+        contentPane.add(tfIdPLanoTreino);
+        tfIdPLanoTreino.setColumns(10);
  
         btConsultarPlano = new JButton("Consultar Plano");
         btConsultarPlano.setBounds(85, 128, 140, 23);
@@ -75,21 +73,21 @@ public class GuiPlanoTreinoConsulta extends JFrame {
         btConsultarPlano.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
  
-                if (tfNumeroIdPLanoTreino.getText().isEmpty()) {
+                if (tfIdPLanoTreino.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Informe o ID do Plano de Treino!");
                     return;
                 }
  
                 int id;
                 try {
-                    id = Integer.parseInt(tfNumeroIdPLanoTreino.getText());
+                    id = Integer.parseInt(tfIdPLanoTreino.getText());
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "ID inválido! Informe um número.");
                     return;
                 }
  
-                // Cria o PlanoTreino vazio (construtor exige os 5 parâmetros)
-                PlanoTreino planoTreino = new PlanoTreino(null, null, null, null, null);
+                // Cria o PlanoTreino vazio 
+                PlanoTreino planoTreino = new PlanoTreino();
                 planoTreino.setIdPlanoTreino(id);
  
                 Bd bd = new Bd();
