@@ -118,7 +118,9 @@ OperacaoBd (interface)
 Sistema_de_Academia/
 ├── README.md
 ├── resource/
-│   └── Av2_atuali_3.3.drawio      # Diagrama de classes/UML do projeto
+│   └── Create do Banco de dados/Popular
+│   └── Apresentação/Documentação
+│   └── Av2_atuali_3.3.drawio     # Diagrama de classes/UML do projeto
 └── src/
     ├── models/                     # Entidades de domínio e DAOs
     ├── views/                      # Telas Swing (interface gráfica)
