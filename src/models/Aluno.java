@@ -5,7 +5,7 @@ public class Aluno extends Pessoa {
  
     public Aluno() {
         super();
-        this.matricula = -1;
+        matricula = -1;
     }
  
     public int getMatricula() {
