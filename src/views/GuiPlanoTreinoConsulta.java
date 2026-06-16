@@ -70,15 +70,18 @@ public class GuiPlanoTreinoConsulta extends JFrame {
     }
  
     private void definirEventos() {
+    	// Evento responsável por consultar um plano de treino pelo ID informado
         btConsultarPlano.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
- 
+            	
                 if (tfIdPLanoTreino.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Informe o ID do Plano de Treino!");
                     return;
                 }
  
                 int id;
+                
+             // Valida se o ID informado é um número válido
                 try {
                     id = Integer.parseInt(tfIdPLanoTreino.getText());
                 } catch (NumberFormatException ex) {
@@ -86,7 +89,7 @@ public class GuiPlanoTreinoConsulta extends JFrame {
                     return;
                 }
  
-                // Cria o PlanoTreino vazio 
+                // Cria o PlanoTreino vazio e set o Id digitado
                 PlanoTreino planoTreino = new PlanoTreino();
                 planoTreino.setIdPlanoTreino(id);
  
@@ -99,7 +102,9 @@ public class GuiPlanoTreinoConsulta extends JFrame {
                     JOptionPane.showMessageDialog(null, "Falha ao conectar ao banco!");
                     return;
                 }
- 
+                
+                // Caso o plano seja encontrado, o método localizar()
+                // preenche automaticamente o objeto planoTreino com os dados recuperados do banco de dados
                 boolean encontrou = dao.localizar();
  
                 if (encontrou) {
@@ -127,13 +132,14 @@ public class GuiPlanoTreinoConsulta extends JFrame {
             lblValorTotal.setText("Valor Total: R$ 0,00");
             return;
         }
- 
+        // Percorre todos os exercícios do plano para preencher a tabela
         for (int i = 0; i < exercicios.length; i++) {
             Exercicios ex = exercicios[i];
             int quantidade = quantidades[i];
             float valorUnitario = ex.getValorUnitario();
             float subtotal = valorUnitario * quantidade;
- 
+            
+            // Adiciona uma nova linha na tabela contendo os dados do exercício
             modelo.addRow(new Object[] {
                     ex.getClass().getSimpleName(),
                     quantidade,
@@ -146,13 +152,14 @@ public class GuiPlanoTreinoConsulta extends JFrame {
         float total = planoTreino.calcularValorTotal();
         lblValorTotal.setText(String.format("Valor Total: R$ %.2f", total));
     }
- 
+    
+    // Remove todas as linhas da tabela e reinicia o valor total
     private void limparTabela() {
         DefaultTableModel modelo = (DefaultTableModel) tabelaExercicios.getModel();
         modelo.setRowCount(0);
         lblValorTotal.setText("Valor Total: R$ 0,00");
     }
- 
+    // Abre a tela centralizada na área de trabalho do usuário
     public static void abrir() {
         GuiPlanoTreinoConsulta frame = new GuiPlanoTreinoConsulta();
         Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();

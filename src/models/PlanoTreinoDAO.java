@@ -3,6 +3,8 @@ package models;
 import java.sql.*;
 import java.util.ArrayList;
 
+ //Classe responsável pelas operações de banco de dados relacionadas aos planos de treino
+
 public class PlanoTreinoDAO implements OperacaoBd {
 	private Bd bd;
 	private PlanoTreino planoTreino;
@@ -31,6 +33,8 @@ public class PlanoTreinoDAO implements OperacaoBd {
 		this.planoTreino = planoTreino;
 	}
 
+	 //Localiza um plano de treino no banco de dados utilizando seu identificador
+	
 	@Override
 	public boolean localizar() {
 		if (!bd.connect()) return false;
@@ -44,7 +48,8 @@ public class PlanoTreinoDAO implements OperacaoBd {
 		    resultSet.next();
 		    
 		    planoTreino.setIdPlanoTreino(resultSet.getInt(1));
-
+		    
+		    // Aluno
 		    Aluno aluno = new Aluno();
 		    aluno.setMatricula(resultSet.getInt(2));
 
@@ -69,8 +74,8 @@ public class PlanoTreinoDAO implements OperacaoBd {
 		    planoTreino.setProfessorResponsavel(professorDAO.getProfessor());
 		    planoTreino.setDataDeCriacao(resultSet.getDate(4));
 		    
-		    ArrayList<Exercicios> listaExercicios = new ArrayList<>();
-		    ArrayList<Integer> listaQuantidades = new ArrayList<>();
+		    ArrayList<Exercicios> listaExercicios = new ArrayList<>();  // Utilizei como base a documentação oficial
+		    ArrayList<Integer> listaQuantidades = new ArrayList<>();	// https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html
 
 		    sql = "SELECT * FROM ExerciciosPlanoTreino WHERE idPlanoTreino = ?";
 
@@ -116,9 +121,13 @@ public class PlanoTreinoDAO implements OperacaoBd {
 
 		}
 	}
+	
+	//Cria uma instância do exercício correspondente ao nome armazenado no banco de dados
 
 	private Exercicios obterExercicio(String nomeExercicio) {
-	    switch(nomeExercicio) {
+	    switch(nomeExercicio) {  //Capitulo 3 do livro
+	    
+	    
 	        // Exercícios com repetição
 
 	        case "LegPress45":
@@ -190,8 +199,6 @@ public class PlanoTreinoDAO implements OperacaoBd {
 	        case "AgachamentoNoHack":
 	            return new AgachamentoNoHack();
 
-
-
 	        // Exercícios com tempo
 
 	        case "PranchaFrontal":
@@ -215,12 +222,12 @@ public class PlanoTreinoDAO implements OperacaoBd {
 	        case "WallSit":
 	            return new WallSit();
 
-
-
 	        default:
 	            return null;
 	    }
 	}
+	
+	//Realiza operações de inclusão, alteração ou exclusão de planos de treino no banco de dados
 	
 	@Override
 	public String atualizar(TipoOperacaoBd operacao) {
@@ -233,7 +240,7 @@ public class PlanoTreinoDAO implements OperacaoBd {
             	// Insere PlanoTreino
             	
                 sql = "INSERT INTO PlanoTreino(matriculaAluno, cpfProfessor, dataDeCriacao) VALUES (?,?,?)";
-                statement = bd.connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                statement = bd.connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); // utilizei AutoIncrement https://dev.mysql.com/doc/refman/9.7/en/example-auto-increment.html
 
                 statement.setInt(1, planoTreino.getAluno().getMatricula());
                 statement.setString(2, planoTreino.getProfessorResponsavel().getCpf());

@@ -27,6 +27,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
 	private JSpinner spRemadaSerrote, spRemadaCurvadaComHalter, spAbdominalArticulado, spPranchaFrontal, spPanturrilhaSentado, spPanturrilhaEmPe;
 	private JSpinner spAgachamentoLivre, spAgachamentoNoHack, spLegPress45, spStiff, spMesaFlexora, spEscada, spPularCorda, spBicicleta, spEsteira;
 	private JSpinner spEliptico, spWallSit, spElevacaoPelvica, spBulgaro;
+	//pra utilizar o Spinner dei uma olhada na documentação https://docs.oracle.com/javase/tutorial/uiswing/components/spinner.html
 	private JButton btExcluir, btLimpar, btAlterar, btSalvar;
 	
 	public GuiCadastroPlanoTreino() {
@@ -459,7 +460,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		lblIdPlanoTreino.setBounds(571, 121, 127, 20);
 		getContentPane().add(lblIdPlanoTreino);
 	}
-	
+	// Define os eventos dos botões da tela igual nas outras classes
 	private void definirEventos() {
 		// TODO Auto-generated method stub
 		btSalvar.addActionListener(new ActionListener() {
@@ -526,16 +527,19 @@ public class GuiCadastroPlanoTreino extends JFrame{
         });
     }
  
+	//Adiciona um exercício e sua quantidade as listas temporárias caso o checkbox correspondente esteja selecionado.
 	private void adicionarExercicio(JCheckBox checkBox, JSpinner spinner, Exercicios exercicio, ArrayList<Exercicios> listaExercicios, ArrayList<Integer> listaQuantidades) {
-
+		
+		// Verifica se o exercício foi selecionado
 	    if (checkBox.isSelected()) {
 
-	        listaExercicios.add(exercicio);
+	        listaExercicios.add(exercicio); // Adiciona o exercício na lista do plano de treino
 
-	        listaQuantidades.add( (Integer) spinner.getValue());
+	        listaQuantidades.add( (Integer) spinner.getValue()); // Adiciona a quantidade informada no Spinner
 	    }
 	}
-	
+
+	//Cria e preenche um objeto PlanoTreino com os dados informados
 	private PlanoTreino preencherPlanoTreino() {
 	    if (tfMatriculaDoAluno.getText().isEmpty() || tfCpfDoProfessor.getText().isEmpty()) { 
 	        JOptionPane.showMessageDialog(null, "Matricula do Aluno e CPF do Professor são obrigatórios!");
@@ -669,6 +673,7 @@ public class GuiCadastroPlanoTreino extends JFrame{
 	    }
 	}
 	
+	 //Reinicia todos os campos da tela, desmarca os exercícios selecionados e zera as quantidades dos spinners.
 	private void limparCampos() {
 		tfMatriculaDoAluno.setText("");
 		tfCpfDoProfessor.setText("");
@@ -695,6 +700,8 @@ public class GuiCadastroPlanoTreino extends JFrame{
 		    sp.setValue(0);
 		}
     }
+	
+	// Abre a tela de cadastro de plano de treino centralizada
     public static void abrir() {
         GuiCadastroPlanoTreino frame = new GuiCadastroPlanoTreino();
         Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
