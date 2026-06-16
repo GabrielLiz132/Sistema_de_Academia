@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+//Classe responsável por gerenciar a conexão com o banco de dados
+
 public class Bd {
 	private String host;
 	private int port;
@@ -11,13 +13,13 @@ public class Bd {
 	private String login;
 	private String senha;
 	public Connection connection;
-		
+	
 	public Bd() {
 		this.host = "localhost";
 		this.port = 3306;
-		this.dbName = "academia";
+		this.dbName = "academia"; //Crie um DATABASE com o nome academia
 		this.login = "root";
-		this.senha = "1325674gG#";
+		this.senha = ""; //Prencha com a sua seneha do banco de dados
 		this.connection = null;
 	}
 		
@@ -64,6 +66,9 @@ public class Bd {
 	public Connection getConnection() {
 		return this.connection;
 	}
+	
+	
+	//Realiza a conexão com o banco de dados.
 
 	public boolean connect() {
 		try {

@@ -1,5 +1,8 @@
 package models;
 
+  //Classe que representa um professor da academia
+  //Herda os dados básicos da classe Pessoa e adiciona informações específicas
+
 public class Professor extends Pessoa {
 	private String cref;
 	private String especialidade;

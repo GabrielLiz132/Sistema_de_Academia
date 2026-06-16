@@ -121,7 +121,7 @@ public class GuiCadastroProfessor extends JFrame{
 	}
 	
 	 private void definirEventos() {
-		 
+		 // Evento responsável por salvar um novo professor no banco de dados
 	        btSalvar.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	                Professor professor = preencherProfessor();
@@ -136,7 +136,7 @@ public class GuiCadastroProfessor extends JFrame{
 	                JOptionPane.showMessageDialog(null, resultado);
 	            }
 	        });
-	 
+	     // Evento responsável por localizar um professor através do CPF informado
 	        btBuscar.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	                if (tfCpf.getText().isEmpty()) {
@@ -167,7 +167,7 @@ public class GuiCadastroProfessor extends JFrame{
 	                }
 	            }
 	        });
-	 
+	     // Evento responsável por alterar os dados de um professor já cadastrado
 	        btAlterar.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	            	Professor professor = preencherProfessor();
@@ -182,7 +182,7 @@ public class GuiCadastroProfessor extends JFrame{
 	                JOptionPane.showMessageDialog(null, resultado);
 	            }
 	        });
-	 
+	     // Evento responsável pela exclusão de um professor do sistema
 	        btExcluir.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	                if (tfCpf.getText().isEmpty()) {
@@ -209,13 +209,15 @@ public class GuiCadastroProfessor extends JFrame{
 	                }
 	            }
 	        });
-	 
+	     // Evento que limpa todos os campos do formulário
 	        btLimpar.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	                limparCampos();
 	            }
 	        });
 	    }
+	 
+	 //Cria e preenche um objeto Professor com os dados informados na tela
 	 private Professor preencherProfessor() {
 		 if (tfCpf.getText().isEmpty() || tfNome.getText().isEmpty()) {
 			 JOptionPane.showMessageDialog(null, "CPF e Nome são obrigatórios!");
@@ -227,7 +229,7 @@ public class GuiCadastroProfessor extends JFrame{
 	        
 	            professor.setNome(tfNome.getText());
 	            professor.setCpf(tfCpf.getText());
-	         
+	         // Conversão da data digitada para o tipo Date
 	            if (!tfDataNascimento.getText().isEmpty()) {
 	                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	                professor.setDataNascimento(sdf.parse(tfDataNascimento.getText()));
@@ -253,7 +255,9 @@ public class GuiCadastroProfessor extends JFrame{
 	        tfCref.setText("");
 	        tfEspecialidade.setText("");
 	    }
-	 
+	    
+	    //Abre a tela de cadastro centralizada na tela do usuário
+	     
 	    public static void abrir() {
 	        GuiCadastroProfessor frame = new GuiCadastroProfessor();
 	        Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();

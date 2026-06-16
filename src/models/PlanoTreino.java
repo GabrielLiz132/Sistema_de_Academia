@@ -2,6 +2,9 @@ package models;
 
 import java.util.Date;
 
+ //Classe que representa um plano de treino da academia
+ //Associa um aluno, um professor responsável e uma lista de exercícios com suas quantidades
+
 	public class PlanoTreino {
 
 		private int idPlanoTreino;
@@ -14,8 +17,11 @@ import java.util.Date;
 	    public PlanoTreino() {
 	    	
 	    }
+	    
+	    // Construtor completo da classe PlanoTreino.
+	    
 	    public PlanoTreino(Aluno aluno, Professor professorResponsavel, Date dataDeCriacao, Exercicios[] exercicios, int[] quantidadeExercicios) {
-	        this.aluno = aluno;
+	    	this.aluno = aluno;
 	        this.professorResponsavel = professorResponsavel;
 	        this.dataDeCriacao = dataDeCriacao;
 	        this.exercicios = exercicios;
@@ -70,6 +76,8 @@ import java.util.Date;
 			this.quantidadeExercicios = quantidadeExercicios;
 		}
 
+	    //Calcula o valor total do plano de treino com base no valor unitário e na quantidade de cada exercício
+		
 		public float calcularValorTotal() {
 			  float total = 0;
 		        for (int i = 0; i < exercicios.length; i++) {

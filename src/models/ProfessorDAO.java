@@ -2,6 +2,8 @@ package models;
 
 import java.sql.*;
 
+//Classe responsável pelas operações de banco de dados relacionadas aos professores.
+
 public class ProfessorDAO implements OperacaoBd {
 	private Bd bd;
 	private Professor professor;
@@ -28,6 +30,8 @@ public class ProfessorDAO implements OperacaoBd {
 		this.professor = professor;
 	}
 
+	//Localiza um professor no banco de dados através do CPF
+	
 	@Override
 	public boolean localizar() {
 		if (!bd.connect()) return false;
@@ -52,7 +56,8 @@ public class ProfessorDAO implements OperacaoBd {
         }
     }
         
-
+	 //Realiza operações de inclusão, alteração ou exclusão de professores no banco de dados
+	
 	@Override
 	public String atualizar(TipoOperacaoBd operacao) {
 		if (!bd.connect()) return "Falha ao conectar!";
@@ -64,8 +69,7 @@ public class ProfessorDAO implements OperacaoBd {
 
     			statement.setString(1, professor.getCpf());
     			statement.setString(2, professor.getNome());
-    			statement.setDate(3, new java.sql.Date(professor.getDataNascimento().getTime()));
-
+    			statement.setDate(3, new java.sql.Date(professor.getDataNascimento().getTime())); // Conversão de java.util.Date para java.sql.Date para compatibilidade com JDBC
     			statement.setString(4, professor.getNumeroTelefone());
     			statement.setString(5, professor.getCref());
     			statement.setString(6, professor.getEspecialidade());
