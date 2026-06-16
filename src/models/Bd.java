@@ -19,7 +19,7 @@ public class Bd {
 		this.port = 3306;
 		this.dbName = "academia"; //Crie um DATABASE com o nome academia
 		this.login = "root";
-		this.senha = ""; //Prencha com a sua seneha do banco de dados
+		this.senha = ""; //Preencha com a sua senha do banco de dados
 		this.connection = null;
 	}
 		

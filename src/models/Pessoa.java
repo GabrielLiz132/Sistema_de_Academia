@@ -10,6 +10,10 @@ public abstract class Pessoa {
     private String numeroTelefone;
  
     public Pessoa() {
+    	nome = "";
+    	cpf = "";
+    	dataNascimento = null;
+    	numeroTelefone = "";
     }
  
     public String getNome() {

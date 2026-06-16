@@ -57,7 +57,7 @@ public class LoginDAO implements OperacaoBd {
 	 public String atualizar(TipoOperacaoBd operacao) {
 		if (!bd.connect()) return "Falha ao conectar!";
         msg = "Operação realizada com sucesso!";
-        try {
+        /*try {
             if (operacao == TipoOperacaoBd.INCLUSAO) {
             	sql = "INSERT into login(id, codigo, senhaHash) values (?,?,?)";
                 statement = bd.connection.prepareStatement(sql);
@@ -86,7 +86,10 @@ public class LoginDAO implements OperacaoBd {
         }
         catch (SQLException erro) {
             msg = "Falha na operação - " + erro.toString();
-        }
+        }         
+        
+        Inicialmente iria ser emplementado uma opção de criação de novos logins, mas acabou não dando o tempo
+        */
         bd.close();
         return msg;
     }

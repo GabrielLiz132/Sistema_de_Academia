@@ -118,7 +118,9 @@ OperacaoBd (interface)
 Sistema_de_Academia/
 ├── README.md
 ├── resource/
-│   └── Av2_atuali_3.3.drawio      # Diagrama de classes/UML do projeto
+│   └── Create do Banco de dados/Popular
+│   └── Apresentação/Documentação
+│   └── Av2_atuali_3.3.drawio     # Diagrama de classes/UML do projeto
 └── src/
     ├── models/                     # Entidades de domínio e DAOs
     ├── views/                      # Telas Swing (interface gráfica)
@@ -148,8 +150,7 @@ Sistema_de_Academia/
 
 ### Exercícios
 
-- **`CategoriaExercicios`** — Enum com os grupos musculares (PEITO, BICEPS, TRICEPS, OMBRO, COSTAS, ABDOMEN, QUADRICEPS, POSTERIOR_DE_COXA, GLUTEOS, PANTURRILHAS).
-- **`Exercicios`** (abstrata) — Atributos comuns: nome, descrição, categoria.
+- **`Exercicios`** (abstrata) — Atributos comuns: nome, descrição.
 - **`ExercicioComRepeticao`** (abstrata) — Exercícios avaliados por repetição (ex.: Supino Reto com Barra, Agachamento Livre, Rosca Bíceps).
 - **`ExercicioComTempo`** (abstrata) — Exercícios avaliados por tempo (ex.: Esteira, Bicicleta, Wall Sit, Pular Corda).
 - Cada exercício concreto (ex.: `SupinoRetoComBarra`, `Esteira`) define seu próprio valor unitário (por repetição ou por segundo).
@@ -175,8 +176,7 @@ Sistema_de_Academia/
 |--------|--------|
 | `Main` | Ponto de entrada da aplicação |
 | `GuiLogin` | Tela de autenticação do usuário |
-| `GuiMenuPrincipal` | Menu principal (acesso administrativo/professor) |
-| `GuiMenuAluno` | Menu específico do aluno |
+| `GuiMenuPrincipal` | Menu principal |
 | `GuiCadastroAluno` | Cadastro e edição de alunos |
 | `GuiCadastroProfessor` | Cadastro e edição de professores |
 | `GuiCadastroPlanoTreino` | Criação de planos de treino, associando exercícios e quantidades a um aluno |

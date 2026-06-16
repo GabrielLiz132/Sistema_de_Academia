@@ -11,6 +11,8 @@ public class PagamentoDAO implements OperacaoBd {
     private String sql, msg;
     
     public PagamentoDAO() {
+    	bd = null;
+    	pagamento = null;
     }
  
     public void setBD(Bd bd) {
